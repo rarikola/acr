@@ -1,0 +1,5 @@
+CNAME
+index.html
+wrangler.jsonc
+public/
+    .gitkeep
