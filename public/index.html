@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astra Capital Research — Prototype</title>
+<style>
+:root{
+  --navy:#0c2f45;
+  --navy2:#123d57;
+  --ink:#17232d;
+  --muted:#6b7780;
+  --line:#dce3e8;
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --green:#dff3e5;
+  --greenInk:#17623a;
+  --amber:#fff1c9;
+  --amberInk:#7b5a06;
+  --red:#f9dddd;
+  --redInk:#8d2c2c;
+  --gold:#c69b41;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+.topbar{background:var(--navy);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+.mark{width:36px;height:36px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900}
+nav{display:flex;gap:20px;font-size:14px;color:#d8e4eb}
+nav a{color:inherit;text-decoration:none}
+.shell{max-width:1500px;margin:0 auto;padding:26px}
+.hero{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:18px}
+h1{font-size:30px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px}
+.badge{background:#e7eef3;border:1px solid #cad6de;border-radius:999px;padding:7px 11px;font-size:12px;white-space:nowrap}
+.card{background:var(--card);border:1px solid #dfe5e9;border-radius:12px;box-shadow:0 8px 22px rgba(21,43,58,.06);overflow:hidden}
+.cardhead{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.cardhead strong{font-size:16px}
+.hint{font-size:12px;color:var(--muted)}
+.tablewrap{overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:1180px}
+th{background:var(--navy);color:#fff;text-align:left;padding:11px 10px;font-size:12px;line-height:1.1;position:sticky;top:0}
+td{padding:10px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}
+tr:hover td{background:#fbfcfd}
+.scorebtn{border:0;border-radius:9px;padding:7px 10px;font-weight:800;min-width:62px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.scorebtn.high{background:var(--green);color:var(--greenInk)}
+.scorebtn.mid{background:var(--amber);color:var(--amberInk)}
+.scorebtn.low{background:var(--red);color:var(--redInk)}
+.scorebtn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.direction.call{color:#17623a;font-weight:700}.direction.put{color:#8d2c2c;font-weight:700}
+.footerline{display:flex;gap:8px;align-items:center;padding:13px 18px;background:#fbfcfd;color:var(--muted);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:#2a9b5f}
+.modalback{position:fixed;inset:0;background:rgba(4,19,29,.58);display:none;align-items:center;justify-content:center;padding:20px;z-index:30}
+.modalback.show{display:flex}
+.modal{width:min(760px,96vw);max-height:90vh;overflow:auto;background:#fff;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.modalTop{background:var(--navy);color:#fff;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.modalTop h2{margin:0;font-size:20px}.modalTop .ticker{color:#b9d5e4;font-size:13px;margin-top:3px}
+.close{border:0;background:rgba(255,255,255,.12);color:#fff;width:34px;height:34px;border-radius:8px;font-size:20px;cursor:pointer}
+.bigscore{font-size:36px;font-weight:900;white-space:nowrap}
+.modalbody{padding:20px 22px 24px}
+.modelrow{display:grid;grid-template-columns:1.6fr .5fr .5fr .65fr;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.modelhead{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800}
+.compname{font-weight:800}
+.reason{grid-column:1/-1;color:#4e5d66;font-size:12px;line-height:1.45;margin-top:-3px;padding-bottom:2px}
+.total{margin-top:16px;padding:13px 14px;border-radius:10px;background:#eef4f7;display:flex;justify-content:space-between;font-weight:900}
+.disclaimer{margin-top:15px;color:#7b858c;font-size:11px;line-height:1.4}
+@media(max-width:700px){
+  .topbar{align-items:flex-start}.topbar nav{display:none}.shell{padding:16px}.hero{align-items:flex-start;flex-direction:column}
+  h1{font-size:24px}.modelrow{grid-template-columns:1.4fr .55fr .55fr}.modelrow>div:nth-child(4){text-align:right}.reason{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="mark">A</div><div>ASTRA CAPITAL RESEARCH</div></div>
+  <nav><a href="#">Research</a><a href="#">Conviction Model</a><a href="#">Earnings</a><a href="#">About ACR</a></nav>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <div>
+      <h1>ACR Research Dashboard</h1>
+      <div class="sub">Fundamentals + market psychology + technical flow + catalysts + options risk/reward.</div>
+    </div>
+    <div class="badge">Prototype · click any Conviction score</div>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <strong>Current Research Ideas</strong>
+      <span class="hint">Conviction is scored 0–10 using ACR Conviction Model v1.0</span>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th><th>Ticker</th><th>Company</th><th>Direction</th><th>Theme</th>
+            <th>Conviction</th><th>Entry</th><th>Week 1</th><th>Week 2</th><th>Week 3</th>
+            <th>Catalyst</th><th>Research Note</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="footerline"><span class="dot"></span> Last research refresh: 6:00 PM ET · market days</div>
+  </section>
+</main>
+
+<div class="modalback" id="modalBack" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modalTop">
+      <div>
+        <h2 id="modalTitle">ACR Conviction Model</h2>
+        <div class="ticker" id="modalTicker"></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <div class="bigscore" id="modalScore"></div>
+        <button class="close" id="closeBtn" aria-label="Close">×</button>
+      </div>
+    </div>
+    <div class="modalbody">
+      <div class="modelrow modelhead">
+        <div>Component</div><div>Weight</div><div>Score</div><div style="text-align:right">Contribution</div>
+      </div>
+      <div id="breakdown"></div>
+      <div class="total"><span>ACR Conviction</span><span id="totalScore"></span></div>
+      <div class="disclaimer">Prototype interface. Component rationales shown here are illustrative UI content, not a current investment recommendation. Production data will be populated from the ACR research database after each market-close refresh.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const weights = [
+  ["Fundamentals",0.30],
+  ["Psychology / Positioning",0.25],
+  ["Technical / Flow",0.20],
+  ["Catalyst",0.15],
+  ["Options Risk / Reward",0.10]
+];
+
+const data = [
+ {date:"2026-07-31",ticker:"AMZN",company:"Amazon",dir:"Call",theme:"Momentum / Event-driven",score:9.6,entry:"$271.58",w1:"$274.48",cat:"Post-earnings AWS and margin strength",note:"Strong earnings; risk is chasing the gap.",
+ comps:[9.4,9.7,9.8,9.7,9.5],
+ reasons:[
+ "High-quality business with durable cloud and commerce cash generation; valuation is judged against forward growth and margin trajectory.",
+ "Expectations remain constructive without obvious capitulation; post-event behavior suggests buyers are still willing to support strength.",
+ "Relative strength and price structure remain favorable; volume/flow confirmation is monitored for exhaustion risk.",
+ "Fresh earnings information and AWS/margin commentary remain the primary near-term driver.",
+ "Defined-risk call structure is attractive only if IV, spread quality and theta permit favorable asymmetry."
+ ]},
+ {date:"2026-07-31",ticker:"XOM",company:"Exxon Mobil",dir:"Call",theme:"Momentum / Value",score:8.5,entry:"$155.44",w1:"$153.04",cat:"Oil / geopolitical tailwind",note:"Integrated oil exposure; risk is rapid de-escalation.",
+ comps:[8.8,8.4,8.1,8.9,7.8],reasons:[
+ "Integrated energy economics and balance-sheet resilience support the base case.",
+ "Positioning benefits from geopolitical concern, but crowded energy exposure can reverse quickly.",
+ "Trend is constructive but requires support to hold after pullbacks.",
+ "Oil and geopolitical developments are the principal near-term catalyst set.",
+ "Options can become expensive around crude volatility; strike and expiry selection matter."
+ ]},
+ {date:"2026-07-31",ticker:"AAPL",company:"Apple",dir:"Put",theme:"Event-driven",score:9.2,entry:"$308.91",w1:"$312.21",cat:"Negative post-earnings repricing",note:"Weak reaction despite beat; risk is aggressive dip-buying.",
+ comps:[8.7,9.5,9.3,9.4,9.0],reasons:[
+ "Business quality remains exceptional, so the bearish thesis depends more on valuation and expectation reset than deterioration.",
+ "Elevated expectations create asymmetric disappointment risk; trapped late buyers are a key behavioral input.",
+ "Price action is evaluated for failed rebounds, resistance and distribution rather than headline fundamentals alone.",
+ "Post-earnings repricing and analyst estimate changes can accelerate the move.",
+ "Put selection focuses on avoiding excessive IV while preserving enough duration for follow-through."
+ ]},
+ {date:"2026-07-31",ticker:"META",company:"Meta Platforms",dir:"Put",theme:"Event-driven",score:8.3,entry:"$556.71",w1:"$592.10",cat:"Estimate revisions / cash-flow concerns",note:"Downside thesis; risk is renewed AI optimism.",
+ comps:[8.3,8.2,8.0,8.7,8.2],reasons:[
+ "Strong core economics reduce outright downside conviction, while spending and valuation frame the risk.",
+ "Sentiment can swing rapidly with AI narratives and buy-the-dip behavior.",
+ "Technical confirmation is required before treating weakness as durable distribution.",
+ "Estimate revisions and capital-spending commentary are the primary catalysts.",
+ "Options require careful IV control because headline sensitivity can widen expected moves."
+ ]},
+ {date:"2026-08-01",ticker:"BSX",company:"Boston Scientific",dir:"Call",theme:"Value / Accumulation",score:8.4,entry:"$46.73",w1:"—",cat:"Support hold and possible base breakout",note:"Needs breakout above resistance; risk is renewed guidance pressure.",
+ comps:[8.6,8.8,8.3,7.7,8.0],reasons:[
+ "Quality med-tech franchise and valuation reset support the recovery thesis, balanced against guidance/segment concerns.",
+ "Extended weakness followed by stabilization can create capitulation-to-accumulation dynamics; trapped sellers are part of the setup.",
+ "The thesis improves if the base holds, relative strength stops deteriorating and accumulation appears on volume.",
+ "A breakout, revisions or company/industry updates could change expectations, but the catalyst set is less immediate than an earnings event.",
+ "Long calls need enough time for a base to resolve; theta risk argues against overly short expirations."
+ ]},
+ {date:"2026-08-01",ticker:"RDDT",company:"Reddit",dir:"Put",theme:"Momentum reversal / Event-driven",score:8.2,entry:"$140.67",w1:"—",cat:"Post-earnings expectation reset",note:"Premium valuation; risk is short squeeze or AI partnership.",
+ comps:[7.8,8.7,8.2,8.5,7.7],reasons:[
+ "Growth can remain strong, so valuation discipline is central to the bearish case.",
+ "High expectations and momentum ownership can create sharp reversals, but squeeze risk remains material.",
+ "A failed rebound or loss of support would improve confirmation.",
+ "Post-earnings estimate changes and AI/data partnership news are key catalysts.",
+ "Put premiums can be rich; defined risk and sufficient duration are required."
+ ]},
+ {date:"2026-08-03",ticker:"AMD",company:"Advanced Micro Devices",dir:"Call",theme:"Event-driven",score:9.3,entry:"$476.15",w1:"—",cat:"Earnings and AI accelerator guidance",note:"High expectations and IV are key risks.",
+ comps:[9.2,9.4,9.3,9.7,8.5],reasons:[
+ "AI/data-center growth, product execution and margins underpin the fundamental component.",
+ "Strong narrative and positioning can propel upside, but euphoria raises the bar for incremental news.",
+ "Relative strength, breakout quality and volume confirmation are heavily weighted after large moves.",
+ "Earnings and accelerator guidance provide a direct catalyst path.",
+ "High event IV reduces the score unless the expected-move asymmetry remains favorable."
+ ]},
+ {date:"2026-08-03",ticker:"MU",company:"Micron Technology",dir:"Put",theme:"Momentum reversal",score:7.9,entry:"$823.03",w1:"—",cat:"China memory competition / sector pressure",note:"Risk is semiconductor-wide rebound.",
+ comps:[7.6,8.0,8.1,8.0,7.8],reasons:[
+ "Memory-cycle fundamentals are constructive enough to limit bearish conviction.",
+ "Crowded semiconductor positioning can unwind, but dip-buying remains a counterforce.",
+ "A reversal pattern requires confirmation through support breaks and weak relative strength.",
+ "Industry pricing, China competition and sector news are the catalyst set.",
+ "Put pricing must compensate for rebound risk and volatility."
+ ]}
+];
+
+const tbody=document.getElementById("rows");
+function cls(s){return s>=9?"high":s>=8?"mid":"low"}
+data.forEach((r,i)=>{
+ const tr=document.createElement("tr");
+ tr.innerHTML=`<td>${r.date}</td><td><strong>${r.ticker}</strong></td><td>${r.company}</td>
+ <td><span class="direction ${r.dir.toLowerCase()}">${r.dir}</span></td><td>${r.theme}</td>
+ <td><button class="scorebtn ${cls(r.score)}" data-i="${i}">${r.score.toFixed(1)}</button></td>
+ <td>${r.entry}</td><td>${r.w1}</td><td>—</td><td>—</td><td>${r.cat}</td><td>${r.note}</td>`;
+ tbody.appendChild(tr);
+});
+
+const back=document.getElementById("modalBack");
+function openModal(i){
+ const r=data[i];
+ document.getElementById("modalTitle").textContent=`${r.company} — ACR Conviction`;
+ document.getElementById("modalTicker").textContent=`${r.ticker} · ${r.dir} thesis · ${r.theme}`;
+ document.getElementById("modalScore").textContent=`${r.score.toFixed(1)} / 10`;
+ const b=document.getElementById("breakdown"); b.innerHTML="";
+ weights.forEach((w,j)=>{
+   const contribution=r.comps[j]*w[1];
+   const row=document.createElement("div");row.className="modelrow";
+   row.innerHTML=`<div class="compname">${w[0]}</div><div>${Math.round(w[1]*100)}%</div><div>${r.comps[j].toFixed(1)}</div>
+   <div style="text-align:right;font-weight:800">${contribution.toFixed(2)}</div>
+   <div class="reason">${r.reasons[j]}</div>`;
+   b.appendChild(row);
+ });
+ const calc=weights.reduce((a,w,j)=>a+r.comps[j]*w[1],0);
+ document.getElementById("totalScore").textContent=`${calc.toFixed(2)} / 10`;
+ back.classList.add("show");
+}
+document.addEventListener("click",e=>{
+ const btn=e.target.closest(".scorebtn"); if(btn) openModal(+btn.dataset.i);
+});
+document.getElementById("closeBtn").onclick=()=>back.classList.remove("show");
+back.addEventListener("click",e=>{if(e.target===back)back.classList.remove("show")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")back.classList.remove("show")});
+</script>
+</body>
+</html>
