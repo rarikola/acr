@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epsilon Units — A Discrete Substrate Model, Open for Contribution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0A0E14;
+  --vacuum:#121826;
+  --panel:#161D2C;
+  --line:#2A3346;
+  --ink:#D7DDE6;
+  --dim:#7C879B;
+  --faint:#4E5A70;
+  --collapsed:#E8A659;
+  --collapsed-dim:#8A6636;
+  --superposed:#7FA0D6;
+  --superposed-dim:#3F5273;
+  --closed:#C06B63;
+  --closed-dim:#6B3A36;
+  --good:#7FBF8F;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--collapsed-dim); color:#fff;}
+
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+.wrap-wide{max-width:920px; margin:0 auto; padding:0 24px;}
+
+h1,h2,h3,h4{font-family:'Fraunces', Georgia, serif; font-weight:600; color:#F2EFE8; letter-spacing:-0.01em;}
+a{color:var(--collapsed);}
+code, .mono{font-family:'IBM Plex Mono', monospace;}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  padding:96px 0 64px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero canvas{position:absolute; top:0; right:-8%; width:56%; height:100%; opacity:0.9; pointer-events:none;}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--superposed); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+}
+.eyebrow .pip{width:7px; height:7px; border-radius:50%; background:var(--superposed); box-shadow:0 0 8px var(--superposed); animation:breathe 2.6s ease-in-out infinite;}
+@keyframes breathe{0%,100%{opacity:.4; transform:scale(0.85);} 50%{opacity:1; transform:scale(1.15);}}
+h1.title{font-size:44px; line-height:1.08; margin:0 0 20px; max-width:640px;}
+.subtitle{color:var(--dim); font-size:19px; max-width:560px; margin:0 0 32px; line-height:1.6;}
+.hero-meta{display:flex; gap:28px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--faint);}
+.hero-meta strong{color:var(--dim); display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px; font-weight:500;}
+
+/* ---------- NAV ---------- */
+.toc{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px 24px; margin:40px 0 0;}
+.toc-title{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--faint); margin-bottom:12px;}
+.toc ol{margin:0; padding-left:20px; columns:2; column-gap:32px;}
+.toc li{margin-bottom:6px; font-size:14.5px; break-inside:avoid;}
+.toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
+.toc a:hover{color:var(--collapsed); border-color:var(--collapsed);}
+
+/* ---------- SECTIONS ---------- */
+section{padding:56px 0;}
+section.divider-top{border-top:1px solid var(--line);}
+.section-label{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--superposed); margin-bottom:10px;}
+h2.section-title{font-size:30px; margin:0 0 28px;}
+h3{font-size:21px; margin:36px 0 14px;}
+p{margin:0 0 16px;}
+.lede{font-size:19px; color:var(--dim); max-width:620px;}
+
+/* status pills */
+.pill{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:20px; margin-right:8px; vertical-align:middle;}
+.pill-live{background:rgba(127,191,143,0.12); color:var(--good); border:1px solid rgba(127,191,143,0.35);}
+.pill-open{background:rgba(127,160,214,0.12); color:var(--superposed); border:1px solid rgba(127,160,214,0.35);}
+.pill-closed{background:rgba(192,107,99,0.12); color:var(--closed); border:1px solid rgba(192,107,99,0.35);}
+.pill-revised{background:rgba(232,166,89,0.12); color:var(--collapsed); border:1px solid rgba(232,166,89,0.35);}
+
+/* postulate list */
+.postulates{list-style:none; margin:0; padding:0; counter-reset:pcount;}
+.postulates li{
+  counter-increment:pcount; position:relative; padding:16px 0 16px 52px; border-bottom:1px solid var(--line);
+}
+.postulates li:last-child{border-bottom:none;}
+.postulates li::before{
+  content:counter(pcount); position:absolute; left:0; top:16px; width:34px; height:34px; border-radius:8px;
+  background:var(--panel); border:1px solid var(--line); color:var(--collapsed); font-family:'IBM Plex Mono',monospace;
+  font-size:15px; display:flex; align-items:center; justify-content:center;
+}
+
+/* formula blocks */
+.formula{
+  background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--collapsed);
+  border-radius:6px; padding:16px 20px; margin:18px 0; font-family:'IBM Plex Mono',monospace; font-size:16px;
+  color:#F2E4CA; overflow-x:auto;
+}
+.formula .label{display:block; font-family:'Source Serif 4',serif; font-size:13px; color:var(--dim); margin-top:8px; font-style:italic;}
+
+/* result cards */
+.card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px 24px; margin:20px 0;}
+.card h4{margin:0 0 8px; font-size:17px; color:var(--collapsed);}
+
+/* tables */
+table{width:100%; border-collapse:collapse; margin:18px 0; font-size:15px;}
+th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line);}
+th{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--faint); font-weight:500;}
+td.mono, th.mono{font-family:'IBM Plex Mono',monospace; font-size:14px;}
+
+/* SEEDS (footnote markers) */
+.seed{
+  display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+  background:var(--superposed-dim); border:1px solid var(--superposed); color:var(--void);
+  font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; cursor:pointer; vertical-align:super;
+  margin:0 2px; animation:breathe 3s ease-in-out infinite; transition:all .35s ease; position:relative;
+}
+.seed:hover{transform:scale(1.15);}
+.seed.collapsed{
+  background:var(--collapsed); border-color:var(--collapsed); color:var(--void); animation:none;
+}
+.sidenote{
+  max-height:0; overflow:hidden; opacity:0; transition:max-height .45s ease, opacity .35s ease, margin .45s ease;
+  background:rgba(232,166,89,0.05); border-left:2px solid var(--collapsed-dim); margin:0; padding:0 18px;
+  font-size:14.5px; color:var(--dim); border-radius:0 6px 6px 0;
+}
+.sidenote.open{max-height:900px; opacity:1; margin:10px 0 18px; padding:12px 18px;}
+.sidenote .tag{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--closed); display:block; margin-bottom:6px;}
+
+/* chart wrapper */
+.chart-box{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px 22px 14px; margin:22px 0;}
+.chart-title{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--dim); margin-bottom:4px;}
+.chart-caption{font-size:13px; color:var(--faint); margin-top:6px;}
+svg text{font-family:'IBM Plex Mono',monospace;}
+
+/* sim box */
+.sim-box{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:24px; margin:24px 0;}
+.sim-row{display:flex; gap:14px; align-items:center; margin-bottom:14px; flex-wrap:wrap;}
+.sim-row label{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--dim); min-width:110px;}
+input[type=range]{flex:1; min-width:140px; accent-color:var(--collapsed);}
+input[type=text]{background:var(--void); border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:8px 10px; font-family:'IBM Plex Mono',monospace; font-size:13px; flex:1; min-width:160px;}
+button.simbtn{font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:6px; border:1px solid var(--collapsed); background:rgba(232,166,89,0.1); color:var(--collapsed); cursor:pointer;}
+button.simbtn:hover{background:rgba(232,166,89,0.2);}
+.sim-stats{display:flex; gap:24px; flex-wrap:wrap; margin-top:14px; padding-top:14px; border-top:1px solid var(--line);}
+.sim-stat .k{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; color:var(--faint); letter-spacing:.05em;}
+.sim-stat .v{font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--collapsed); margin-top:2px;}
+
+/* contribute */
+.contrib-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+.contrib-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px;}
+.contrib-card h4{margin:0 0 8px; font-size:16px; color:var(--superposed);}
+.contrib-card p{font-size:14.5px; color:var(--dim); margin:0;}
+
+footer{border-top:1px solid var(--line); padding:40px 0 60px; color:var(--faint); font-size:13.5px;}
+
+@media (max-width:640px){
+  h1.title{font-size:32px;}
+  .toc ol{columns:1;}
+  .hero canvas{display:none;}
+  .contrib-grid{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion: reduce){
+  .seed{animation:none;} .eyebrow .pip{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<canvas id="heroCanvas" width="600" height="500"></canvas>
+<div class="wrap">
+  <div class="eyebrow"><span class="pip"></span>Open research draft &middot; seeking collaborators</div>
+  <h1 class="title">Epsilon Units<br>A Discrete Substrate Model of Space, Time, and Matter</h1>
+  <p class="subtitle">Months of collaborative work between a human researcher and Claude, building physics from one primitive &mdash; a discrete "seed" that does exactly one thing &mdash; and testing every claim against real mathematics before trusting it. This document is an honest snapshot, not a finished theory, opened up because it needs more minds than two.</p>
+  <div class="hero-meta">
+    <div><strong>Status</strong>3 defended results &middot; several verified mechanisms &middot; one foundational revision</div>
+    <div><strong>Reading this</strong>Dim circled numbers are seeds &mdash; click one to collapse it and read what didn't work</div>
+    <div><strong>Best entry point</strong>&sect;7, gravity &mdash; the largest open problem</div>
+  </div>
+</div>
+</div>
+
+<div class="wrap">
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#postulates">Postulates</a></li>
+    <li><a href="#core">Part I &mdash; The defended core</a></li>
+    <li><a href="#mechanisms">Part II &mdash; Verified mechanisms</a></li>
+    <li><a href="#revision">Part III &mdash; The quantum revision</a></li>
+    <li><a href="#vacuum">Part IV &mdash; Vacuum and matter</a></li>
+    <li><a href="#gravity">Part V &mdash; Gravity (open)</a></li>
+    <li><a href="#earlier">Earlier closed avenues</a></li>
+    <li><a href="#open">Open questions</a></li>
+    <li><a href="#method">Methodology</a></li>
+    <li><a href="#contribute">How to contribute</a></li>
+  </ol>
+</nav>
+</div>
+<div class="wrap">
+
+<section id="intro">
+  <div class="section-label">00 &mdash; Why this document exists</div>
+  <h2 class="section-title">Introduction</h2>
+  <p class="lede">This project started as an attempt to build physics from a single primitive, without borrowing spacetime, energy, or quantum mechanics as pre-existing ingredients &mdash; and to see how much of known physics falls out anyway.</p>
+  <p>Over several months, that attempt produced three results we're willing to defend, a growing set of verified structural mechanisms, one deliberate revision to the foundations, and a long, carefully kept list of things that looked promising and didn't survive contact with the math. That last part is not an appendix of shame &mdash; in this project, ruling a path out has consistently been worth more than another reproduction of something already known. It's kept visible throughout, as side notes attached to the specific claim it bears on.</p>
+  <p>We're publishing this now, incomplete, because the two of us have taken it as far as we can alone. If you're a mathematician, physicist, or another AI system who wants to pull on one of these threads &mdash; especially <a href="#gravity">gravity</a>, which remains completely open &mdash; this is the whole state of the work, warts included.</p>
+</section>
+
+<section id="postulates" class="divider-top">
+  <div class="section-label">01</div>
+  <h2 class="section-title">Postulates</h2>
+  <p>Six statements the model is built from. Nothing here insists on exactly six, any more than geometry insists &pi; be derivable from something deeper &mdash; some things in a theory are inputs, not outputs, and this project stopped treating "why this number" as a question that always needs answering before proceeding.</p>
+
+  <ol class="postulates">
+    <li><strong>Fixed minimum spacing.</strong> Reality is built from indivisible units (&epsilon;) at a fixed minimum spacing &mdash; you cannot squeeze another between two. Nothing in this substrate is truly continuous.</li>
+    <li>
+      <strong>A seed's state &mdash; revised.</strong>
+      <span class="pill pill-revised">revised, month 4</span>
+      <div style="margin-top:10px; padding:14px 16px; background:rgba(232,166,89,0.06); border:1px solid var(--collapsed-dim); border-radius:8px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px;">Original (months 1&ndash;4)</div>
+        <p style="margin:0 0 14px; color:var(--dim);">A seed does exactly one thing: <strong>on/off.</strong> A two-state oscillator with a definite, if hidden, value at every moment.</p>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px;">Revised (current)</div>
+        <p style="margin:0;">A seed's state is a genuine <strong>quantum superposition</strong> of on and off &mdash; not a hidden but definite value waiting to be revealed, but actually undetermined until measurement or decoherence forces it into one.</p>
+      </div>
+      <p style="margin-top:10px; font-size:14.5px; color:var(--dim);">This revision came from testing, not intuition &mdash; see <a href="#revision">Part III</a>. It turned out to require almost nothing be discarded: the earlier "classical" results are the decohered, macroscopic limit of a substrate that was always fundamentally quantum underneath.</p>
+    </li>
+    <li><strong>Oscillation in the ground state.</strong> A seed oscillates even in its lowest-energy state. Its frequency sets its mass/energy, <span class="mono">E = hf</span>. After postulate 2's revision, this is understood as the seed's quantum <em>phase</em> rotating continuously &mdash; not a classical value flipping back and forth <span class="seed" data-fn="1">1</span>.</li>
+    <li><strong>Signed measure.</strong> &epsilon; is a signed quantity. The conserved quantity is <span class="mono">N&#8314; &minus; N&#8315;</span>, not the raw count.</li>
+    <li><strong>Pre-mass, pre-space.</strong> The substrate is pre-mass/energy and pre-space. Its spacing never stretches &mdash; expansion means new seeds, not stretched distance between old ones.</li>
+    <li><strong>Pair creation.</strong> Seeds are created in &plusmn; pairs as volume grows, holding density constant. Global energy is <em>not</em> conserved.</li>
+  </ol>
+
+  <div id="fn-1" class="sidenote"><span class="tag">Side note</span>The distinction matters more than it looks: a classically "oscillating" seed has a definite value at every instant, just one that keeps changing. That's incompatible with postulate 2 once superposition is genuine. The resolution, tested directly rather than assumed: a superposed seed's on/off probability can sit at exactly 0.5 forever while its underlying quantum phase advances in perfect lockstep with its own frequency (&phi;(t) = &phi;&#8320; + &omega;t, matched numerically to four decimal places) &mdash; both true at once, not a contradiction. Real zero-point energy was always this kind of phase phenomenon, with no classical analogue, even before the revision.</div>
+</section>
+
+</div>
+<div class="wrap">
+<section id="core" class="divider-top">
+  <div class="section-label">02 &mdash; Part I</div>
+  <h2 class="section-title">The defended core</h2>
+  <p class="lede">Three results the project stands behind. Everything else in this document is exploratory work built on top of, or alongside, this core &mdash; not part of it.</p>
+
+  <div class="card">
+    <h4>1. Expansion supplies three things at once</h4>
+    <p>A seed's oscillation phase is already a clock. A <em>shared</em> time exists only if seeds agree on their clock <em>rate</em> &mdash; and Hubble drag, a standard general-relativistic effect where momenta redshift as <span class="mono">p &prop; 1/a</span>, does the rest. This isn't an added mechanism; it's the same redshift that already governs how light and momentum behave in an expanding universe, just applied to the seeds' own oscillation.</p>
+    <div class="formula">p(t) &prop; 1/a(t) &nbsp;&mdash;&nbsp; standard Hubble drag, not a new postulate
+      <span class="label">Momentum redshift under expansion, applied to a seed's own oscillatory momentum.</span>
+    </div>
+    <table>
+      <tr><th>H&#8320;</th><th class="mono">rate spread</th><th>shared time?</th></tr>
+      <tr><td class="mono">0.000</td><td class="mono">0.449</td><td>no</td></tr>
+      <tr><td class="mono">0.010</td><td class="mono">0.0019</td><td>yes</td></tr>
+      <tr><td class="mono">0.030</td><td class="mono">0.00032</td><td>yes</td></tr>
+    </table>
+    <div class="chart-box" id="chart-expansion"></div>
+    <p>The arrow of time is derived from the same mechanism, not assumed:</p>
+    <table>
+      <tr><th>Regime</th><th class="mono">Clock-rate spread</th><th>Outcome</th></tr>
+      <tr><td>Expanding (H&gt;0)</td><td class="mono">0.0029</td><td style="color:var(--good)">clocks converge</td></tr>
+      <tr><td>Static (H=0)</td><td class="mono">0.448</td><td style="color:var(--dim)">no shared time</td></tr>
+      <tr><td>Contracting (H&lt;0)</td><td class="mono">5.96</td><td style="color:var(--closed)">clocks diverge</td></tr>
+    </table>
+    <p style="font-size:14.5px; color:var(--dim);">This is the one place in the whole project where results genuinely unified rather than accumulated &mdash; one physical fact, expansion, produces three separate-looking phenomena at once.</p>
+  </div>
+
+  <div class="card">
+    <h4>2. An automatic UV cutoff</h4>
+    <p>Fixed spacing (postulate 1) gives a maximum possible frequency for free, verified three independent ways to within 0.3%. Standard quantum field theory has no such cutoff built in &mdash; it has to be imposed by hand, or hoped for from an unfinished theory of quantum gravity. Here it falls straight out of the substrate being discrete at all.</p>
+  </div>
+
+  <div class="card">
+    <h4>3. A falsifiable prediction, with a date attached</h4>
+    <p>Fixed spacing forces the dark-energy equation of state <span class="mono">w = &minus;1</span> exactly, and forbids it from evolving over cosmic time &mdash; unlike most mainstream dark-energy models, which allow <span class="mono">w</span> to drift.</p>
+    <div class="formula">
+      on-site oscillation energy&nbsp;&nbsp;&nbsp;+4.50 &nbsp;per seed<br>
+      interaction energy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&minus;2.09 &nbsp;per seed<br>
+      total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+2.41 &nbsp;per seed &nbsp;&rarr;&nbsp; &rho; = +2.30, p = &minus;2.30, w = &minus;1
+      <span class="label">Vacuum energy density from postulates 5 and 6 alone, no fitted parameters.</span>
+    </div>
+    <p>Tested against real observation with nothing tuned to match it: transition redshift 0.632 vs. observed 0.64&plusmn;0.06; deceleration parameter &minus;0.528 vs. &minus;0.55&plusmn;0.05; age of the universe 13.80 Gyr vs. 13.80&plusmn;0.02 Gyr.</p>
+    <p><strong>DESI DR2</strong> (2025) shows tension with a constant <span class="mono">w</span> &mdash; up to 4.2&sigma; combining CMB and DES-Y5 supernovae &mdash; but this is sample-dependent <span class="seed" data-fn="2">2</span>. <strong>DESI DR3, expected 2027, is the decisive test.</strong> If evolving dark energy holds up there, this framework is falsified outright: fixed spacing cannot produce an evolving <span class="mono">w</span>, and that same postulate is load-bearing for the UV cutoff too.</p>
+    <div id="fn-2" class="sidenote"><span class="tag">Side note</span>The DESI tension is highly sample-dependent: 3.9&sigma; with DES5Y supernovae, 2.5&sigma; with Pantheon+, and Pantheon+ alone actually <em>agrees</em> with a constant w (w = &minus;0.997&plusmn;0.025). A 2026 re-analysis with relaxed BAO priors argues the late-time acceleration signal doesn't survive at all. We also tested whether a restricted, vacuum-only version of frequency growth could explain the tension without breaking the constant-w prediction for matter &mdash; a candidate mechanism where the vacuum's own frequency grows and periodically resets. Three separate attempts, all closed: simple monotonic growth predicts a constant, deeply phantom w=&minus;4/3, no match to real data. The sawtooth-reset version fails for three independent structural reasons &mdash; an unsynchronized population average is provably flat over time; a synchronized one gives repeating cycles rather than DESI's apparent single transition; and even one cycle's reset is abrupt while the real curve is smooth across a huge redshift range. A third attempt using decohering quantum tunneling <em>does</em> produce genuinely smooth transitions (see &sect;4's Δ&sup3; law) and needs a real physical asymmetry to work &mdash; but tested properly, it cannot produce both a believable asymmetric outcome and the needed overshoot-then-decline shape at the same time. Checked directly across the full transitional range for a sweet spot: none found. All three closed for identifiable structural reasons, not abandoned out of difficulty.</div>
+  </div>
+</section>
+</div>
+<div class="wrap">
+<section id="mechanisms" class="divider-top">
+  <div class="section-label">03 &mdash; Part II</div>
+  <h2 class="section-title">Verified mechanisms</h2>
+  <p class="lede">Real, reproducible results built after the core, each independently tested &mdash; several with a genuine methodological catch along the way, kept visible rather than smoothed over.</p>
+
+  <h3>Confinement, via lattice gauge theory</h3>
+  <p>Motivated directly by postulate 1's fixed spacing, not imported wholesale: a discrete lattice confines automatically (Wilson, 1974). We built Z2 gauge theory &mdash; link variables on the bonds <em>between</em> seeds, not a new state on each seed &mdash; and verified genuine area-law confinement via Creutz ratios <span class="pill pill-live">verified</span> <span class="seed" data-fn="3">3</span>.</p>
+  <p>Extended to Z3 as the natural next step: it also confines cleanly, and its charge-conservation arithmetic exactly reproduces real QCD's N-ality rule &mdash; mesons need 2 objects, baryons need 3 &mdash; because Z3 is literally SU(3)'s center subgroup. <strong>N=3 matching real baryons is real, but coincidental</strong> <span class="seed" data-fn="4">4</span>; nothing here derives why nature picked 3 over 4, which is as open here as in the real Standard Model.</p>
+  <div id="fn-3" class="sidenote"><span class="tag">Side note</span>A hand-prescribed straight domain-wall strip initially gave a beautiful, near-perfect linear energy fit &mdash; retracted after genuine relaxation from an unbiased starting point showed no wall forms unprompted at all. The lesson generalized: a pinned scalar field is a <em>soft</em> constraint (locally satisfiable without global consequence), while a vortex's winding number is a <em>hard</em>, topological one. Real confinement needs the hard kind, and this distinction now governs how every mechanism in the project gets evaluated before being trusted.</div>
+  <div id="fn-4" class="sidenote"><span class="tag">Side note</span>Stress-tested by checking Z4 and Z5 as well: both confine equally cleanly, each at its own correct coupling window. So the fact that Z3 happens to match real baryon counting isn't something the model derives &mdash; any Zn would confine and give its own N-ality rule. A separate, related result: fractionalization is real here too &mdash; a single flipped qubit in an ordered chain splits cleanly into two independently-propagating domain walls, light-cone spreading, matching known rigorous physics &mdash; but these separate freely rather than staying confined, the opposite of what real quarks need. Genuine result, just not the hoped-for one.</div>
+
+  <h3>Dimension genuinely matters</h3>
+  <p>Local, spatially-coupled synchronization dynamics under permanent frequency disorder: in 2D, defect density never decays &mdash; a genuine dynamic steady state, not slow coarsening, checked across nearly three decades of simulated time. In 3D, a real, sharp, size-independent phase transition exists around <span class="mono">K/K<sub>c</sub> &asymp; 2.5</span>, above which defects vanish and long-range order becomes real.</p>
+  <div class="formula">K<sub>c</sub> = 2&sigma;&radic;(2/&pi;) &nbsp;=&nbsp; 1.5958&hellip;
+    <span class="label">The synchronization threshold. Matched simulation to the exact analytic value, not fitted.</span>
+  </div>
+  <div class="chart-box" id="chart-dimension"></div>
+
+  <h3>Quantum tunneling follows a derived cubic law</h3>
+  <p>A frequency-space double well, built from the same quartic potential as the project's own kink &mdash; the instanton for this potential is mathematically identical to the kink, just read in imaginary time instead of space. The core physical result: whether a locked seed's frequency can ever change depends almost entirely on the <em>separation</em> between two candidate frequencies, not their absolute value.</p>
+  <div class="formula">S = (2&radic;2 / 3) &Delta;&sup3;
+    <span class="label">Instanton action. Not a new formula &mdash; a standard result from 1970s instanton calculus, re-derived here and applied to frequency-space seed dynamics for the first time <span class="seed" data-fn="5">5</span>.</span>
+  </div>
+  <p>Confirmed by directly diagonalizing the real quantum problem (not the approximation): fitted slope &minus;0.896 against a predicted &minus;0.943, about 5% agreement, consistent with expected higher-order corrections. Independently re-derived via a completely different, non-quantum route &mdash; an exact discrete hopping chain, no calculus at all &mdash; which <em>also</em> gives cubic-in-&Delta; growth, with a different coefficient (as expected for a different discretization) but the same power.</p>
+  <div id="fn-5" class="sidenote"><span class="tag">Side note</span>A parallel attempt tried to derive this law from pure counting instead &mdash; zero time, zero energy, honoring postulate 5's "pre-time, pre-energy" substrate literally, using only postulate 1's discreteness and postulate 4's conserved signed measure. Real, decisive, and genuinely different result: counting gives a <em>linear</em> law (almost exactly ln(2)&middot;L), not cubic. Plain counting of a fixed pattern doesn't yet contain anything barrier-shaped; what a genuinely pre-time double-well-equivalent combinatorial object would even look like is still open, not solved.</div>
+
+  <div class="sim-box">
+    <div class="sim-row"><strong style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--collapsed);">LIVE &mdash; run the real calculation yourself</strong></div>
+    <p style="font-size:14px; color:var(--dim); margin-top:0;">This solves the actual quantum double well by direct imaginary-time propagation in your browser &mdash; the same method used to validate the formula above, not a lookup table.</p>
+    <div class="sim-row">
+      <label>Separation &Delta;</label>
+      <input type="range" id="simDelta" min="0.05" max="6.0" step="0.02" value="1.1">
+      <span id="simDeltaVal" class="mono" style="color:var(--collapsed); min-width:42px;">1.10</span>
+    </div>
+    <div class="sim-row">
+      <button class="simbtn" onclick="setSimDelta(1.0)">&sigma; = 1</button>
+      <button class="simbtn" onclick="setSimDelta(2.581)">&omega;<sub>min</sub> = 2.58 (dark-energy floor)</button>
+      <button class="simbtn" onclick="setSimDelta(4.5)">&Delta; = 4.5</button>
+    </div>
+    <div class="sim-stats">
+      <div class="sim-stat"><div class="k">Ground state E&#8320;</div><div class="v" id="simE0">&mdash;</div></div>
+      <div class="sim-stat"><div class="k">Excited state E&#8321;</div><div class="v" id="simE1">&mdash;</div></div>
+      <div class="sim-stat"><div class="k">Splitting</div><div class="v" id="simSplit">&mdash;</div></div>
+      <div class="sim-stat"><div class="k">Regime</div><div class="v" id="simRegime" style="font-size:13px;">&mdash;</div></div>
+    </div>
+  </div>
+
+  <p>Given the formula, we found an unforced, real consistency: plugging &omega;<sub>min</sub> (the dark-energy floor from Part I) directly into this law gives deep, sharp suppression &mdash; while K<sub>c</sub>, a different established scale, does not <span class="seed" data-fn="6">6</span>. Combining this with the classical barrier height gave a genuinely new result: the crossover temperature where classical thermal hopping and quantum tunneling predict the identical rate.</p>
+  <div class="formula">T<sub>c</sub> = 3&Delta; / (8&radic;2)
+    <span class="label">Crossover temperature, built from this project's own two independently-derived numbers, not imported.</span>
+  </div>
+  <div id="fn-6" class="sidenote"><span class="tag">Side note</span>Two real bugs were caught building the tools around this law, neither glossed over. First, an unstable time step in the browser-based simulator (tied to grid spacing incorrectly) silently returned exactly zero for every input until diagnosed and fixed &mdash; verified afterward against the trusted values to five decimal places. Second, the "exact" quantum diagonalization method has its own hidden precision ceiling at deeply suppressed separations (ordinary double-precision arithmetic simply runs out of resolution) &mdash; flagged honestly rather than patched with a fake number.</div>
+
+</section>
+</div>
+<div class="wrap">
+<section id="revision" class="divider-top">
+  <div class="section-label">04 &mdash; Part III</div>
+  <h2 class="section-title">The quantum revision <span class="pill pill-revised">turning point</span></h2>
+  <p class="lede">An earlier working hypothesis was that same-state seeds could be linked "absolutely," no matter the distance between them &mdash; not synchronized over time, just given, the way postulate 2 itself is given. Testing that claim properly is what changed the foundations.</p>
+
+  <h3>Testing "absolute" the right way</h3>
+  <p>The literal reading &mdash; seeds always give the identical result, regardless of distance or how they're measured &mdash; is a real, standard test: the CHSH inequality, the same tool physicists use in actual Bell-test experiments. Real laboratories have never once measured a correlation stronger than 2.828 (Tsirelson's bound) <span class="seed" data-fn="7">7</span>.</p>
+  <div class="chart-box" id="chart-chsh"></div>
+  <p>The literal axiom gives exactly <span class="mono">2.0</span> &mdash; the classical bound. Not a violation of anything, but not special either: Bell's theorem <em>proves</em> that any model where a seed has a definite, pre-existing value &mdash; however cleverly hidden or however non-local &mdash; is capped there. There is no way around this with more cleverness. Building the same claim instead as genuine quantum entanglement (two seeds prepared in a superposed "always match" state, never assigned a value in the first place) gives exactly <span class="mono">2.828427</span> &mdash; precisely 2&radic;2, the real experimental ceiling, landing on it exactly rather than near it.</p>
+  <div id="fn-7" class="sidenote"><span class="tag">Side note</span>An earlier, separate fork had already built seeds as genuine two-level quantum systems and found real complications worth remembering here: closed qubit chains entangle fast even at weak coupling, and adding realistic decoherence (Lindblad dephasing, representing coupling to the rest of the substrate) produces a genuine "entanglement sudden death" transition &mdash; the classical, sync-without-entanglement result survives into the quantum picture specifically <em>because</em> decoherence is present, not despite it.</div>
+
+  <h3>Postulate 2, revised</h3>
+  <p>Only genuine superposition can reach 2.828; a seed that's merely hidden-but-definite cannot, proven not observed. <strong>Postulate 2 was revised</strong> &mdash; see <a href="#postulates">&sect;1</a> for the full wording. The reassuring part: almost nothing already built needed to be discarded. Every "classical" result in this document &mdash; synchronization, confinement, N-ality, <span class="mono">w=&minus;1</span> &mdash; turns out to be the decohered, macroscopic limit of a substrate that was always fundamentally quantum underneath, not contradicted by the revision.</p>
+
+  <h3>A cosmological narrative falls out of it</h3>
+  <p>If superposition is the default state, and a seed only becomes definite by decohering &mdash; interacting with enough of the rest of the substrate &mdash; then postulate 6 (continuous seed creation as the universe expands) predicts something concrete: the "bath" any seed sits in isn't fixed, it <em>grows</em> as the universe ages. If a larger bath causes more decoherence, that predicts a smooth, undifferentiated early universe with structure accumulating later &mdash; the actual shape of real cosmological structure formation.</p>
+  <div class="chart-box" id="chart-bath"></div>
+  <p>Tested directly: growing the bath size alone, at <em>fixed</em> per-seed coupling strength, drives a clean, monotonic increase in decoherence <span class="seed" data-fn="8">8</span> &mdash; not from any single seed pushing harder, purely from more seeds existing.</p>
+  <div id="fn-8" class="sidenote"><span class="tag">Side note</span>The simulation hit a real computational ceiling at bath size 10 (12 total qubits &mdash; exact quantum simulation scales as 2&#8319;, and this is currently the practical limit for this method). The confirmed trend covers bath sizes 2 through 8 only; whether it continues the same way at genuinely cosmological scale is a real, open extrapolation, not verified.</div>
+
+</section>
+</div>
+<div class="wrap">
+<section id="vacuum" class="divider-top">
+  <div class="section-label">05 &mdash; Part IV</div>
+  <h2 class="section-title">Vacuum and matter</h2>
+  <p class="lede">Once seeds are genuinely quantum, two natural questions follow: does the same law that governs a locked seed's stability also govern how fast it loses its quantumness &mdash; and could the vacuum itself simply be superposed seeds that haven't decohered yet?</p>
+
+  <h3>Does stability protect against decoherence too?</h3>
+  <p>Tested directly, using the cubic tunneling law's own splitting value as the coupling strength in a system coupled to a bath of other seeds. The result is <strong>non-monotonic</strong> &mdash; protected at both small and large separation, with a real vulnerability dip in between &mdash; not the simple shared law a first guess might expect <span class="seed" data-fn="9">9</span>.</p>
+  <div class="chart-box" id="chart-decoherence"></div>
+  <p>Two hypotheses were tested for why. Bath-frequency resonance (the dip should track the bath's own characteristic frequency) was <strong>ruled out cleanly</strong> &mdash; doubling the bath frequency left the dip at the exact same separation. A different, genuine phenomenon was found instead: <strong>motional narrowing</strong> &mdash; slow-fluctuating baths cause strong decoherence, fast-fluctuating ones average their own effect away, confirmed as a clean, monotonic trend. Coupling strength does move the dip, but not by a simple factor &mdash; it shifts <em>and broadens</em> into a wide plateau at stronger coupling, the ordinary signature of a real physical resonance, not a clean closed-form law.</p>
+  <div id="fn-9" class="sidenote"><span class="tag">Side note</span>Two real methodological catches on the way to this result. First, the system was accidentally started in an eigenstate of its own tunneling Hamiltonian &mdash; a stationary state, unnaturally protected, not a fair test &mdash; caught and fixed by starting genuinely localized in one well instead. Second, a coupling axis choice produced real quantum-Zeno-style suppression of the system's own oscillation without any actual loss of purity &mdash; a real, named, distinct phenomenon from decoherence, not a bug, but the wrong tool for what was being measured. Switching to the coupling axis already proven to work elsewhere in the project finally produced the honest signal reported above.</div>
+
+  <h3>Can superposed seeds be the vacuum?</h3>
+  <p>A natural synthesis: if superposition is default and decoherence produces locked, clustering matter, then vacuum &mdash; the substance behind the dark-energy result in Part I &mdash; may simply be seeds that haven't decohered. Tested directly rather than assumed, and the first attempt got the labels backwards <span class="seed" data-fn="10">10</span>: coherently aligned seeds (all sharing the same superposition) turned out to be what "locked matter" should look like &mdash; strong binding, matching the earlier result that condensation releases real energy &mdash; while genuine vacuum is <em>uncorrelated</em> superposition, independent random phases with no shared alignment.</p>
+  <p>With proper statistics, uncorrelated vacuum's interaction energy converges to <strong>exactly zero</strong> &mdash; not the small-but-real negative value the dark-energy derivation in Part I actually needs. A real, decisive tension: full randomness is too weak. Real vacuum most likely needs a specific, intermediate correlation &mdash; not zero, not maximal &mdash; not yet derived from anything more fundamental. A sharpened, open question, not a solved one.</p>
+  <div id="fn-10" class="sidenote"><span class="tag">Side note</span>The corrected picture also clarified that a third natural-seeming candidate &mdash; a fully entangled "cat state" spanning every seed at once &mdash; represents neither vacuum nor ordinary matter well; it gave exactly zero interaction energy too, for a different structural reason (each individual seed's own local direction is completely undetermined in that state). Neither extreme works; the right answer sits somewhere in between, unmapped.</div>
+
+  <h3>Decoherence, oscillation, and the unresolved clustering puzzle</h3>
+  <p>Following the proposed picture through: seeds break superposition, start genuinely oscillating (not freezing into a static value), and neighboring seeds that decohere together should cluster. The first two pieces are confirmed directly &mdash; a decohered seed keeps moving, never settling into a fixed value, even long after the initial transient <span class="seed" data-fn="11">11</span>.</p>
+  <p>The clustering piece ended the most recent session on a genuinely open note. A proper control (zero coupling between two neighboring, independently decohering seeds) gives exactly zero correlation, confirming the measurement itself is sound. With real coupling, correlation is real but wildly inconsistent in sign across random trials at first. Scanning coupling strength for a threshold into clean clustering &mdash; the "quantity becomes quality" pattern that has worked elsewhere in this project &mdash; found the <strong>opposite</strong> of what was hypothesized:</p>
+  <div class="chart-box" id="chart-clustering"></div>
+  <p>Stronger coupling makes the result <em>more consistent</em> (the spread across trials shrinks steadily) but the correlation itself <em>shrinks toward zero</em> rather than growing into a strong, reliable clustering signal. This is the project's most recent genuinely unresolved finding.</p>
+  <div id="fn-11" class="sidenote"><span class="tag">Side note</span>Honest caveat: the confirmed post-decoherence motion is irregular and jittery rather than a clean, textbook oscillation &mdash; almost certainly because the bath used (5 qubits) is small enough to cause real quantum recurrence, a known, already-established fact about small closed systems in this project. A genuinely large bath might smooth this into cleaner motion, but confirming that hits the same computational ceiling noted in Part III.</div>
+
+</section>
+</div>
+<div class="wrap">
+<section id="gravity" class="divider-top">
+  <div class="section-label">06 &mdash; Part V</div>
+  <h2 class="section-title">Gravity <span class="pill pill-open">wide open</span></h2>
+  <p class="lede">The single biggest unresolved question in this project. Two serious, independently-derived mechanisms have been tried. Both closed for identifiable structural reasons &mdash; not abandoned from difficulty, genuinely ruled out &mdash; and no third candidate currently exists. If you're looking for the best place to contribute, it's here.</p>
+
+  <div class="card">
+    <h4>Mechanism 1 &mdash; shadowing / capture <span class="pill pill-closed">closed</span></h4>
+    <p>Two locked clusters compete for continuously-created vacuum seeds (postulate 6) &mdash; a real, carefully-derived attractive force between them. But every version of this either stays short-ranged, or diverges, or forces gravity's strength to secretly track the size of the universe <span class="seed" data-fn="12">12</span>.</p>
+    <div id="fn-12" class="sidenote"><span class="tag">Side note</span>A hard capture radius gives real but inherently short-range attraction. Removing the radius makes the underlying integral diverge &mdash; traced to a genuine structural cause: uniform seed density growing with shell volume, unless the individual interaction decays faster than that growth, which nothing in the postulates currently supplies. Adding exponential decay converges the integral but forces short-range, Yukawa-like gravity &mdash; the wrong shape. Trying a finite, toroidal universe instead does not rescue it: the force still diverges, now as a function of universe size rather than the sampling cutoff &mdash; worse, since it would mean G secretly tracks cosmic scale, colliding directly with how tightly G is observed to be constant in reality. Closed on both the infinite and finite versions, for real structural reasons.</div>
+  </div>
+
+  <div class="card">
+    <h4>Mechanism 2 &mdash; phase-coherence reach <span class="pill pill-closed">closed for attraction</span></h4>
+    <p>Whether locked frequency-coherence itself could transmit influence between separate objects. Two independently strongly-coupled cluster regions in a disordered 3D vacuum each reach real internal order &mdash; masses <em>can</em> exist as distinct objects &mdash; but the phase relationship <em>between</em> the two clusters, checked across 15 independent trials, is statistically indistinguishable from pure chance (89.9&deg; mean vs. an exact 90&deg; chance prediction) <span class="seed" data-fn="13">13</span>. Local order existing is not the same as separate objects influencing each other.</p>
+    <div id="fn-13" class="sidenote"><span class="tag">Side note</span>The dimension-dependence result that came out of building this thread (see Part II) stands on its own even though the gravity application failed &mdash; a good example of a closed path still producing something real. The mechanism itself remains closed specifically for explaining attraction between separate objects.</div>
+  </div>
+
+  <p style="margin-top:28px;">The most promising unexplored connection is the &Delta;&sup3; separation law from Part II &mdash; genuinely untested for whether it says anything about gravity specifically, as opposed to particle stability alone.</p>
+</section>
+</div>
+<div class="wrap">
+<section id="earlier" class="divider-top">
+  <div class="section-label">07</div>
+  <h2 class="section-title">Earlier closed avenues</h2>
+  <p>Before the results in Parts I&ndash;V, several foundational hypotheses were tested and ruled out. Kept here because closing a path was real work, and later results were built with these lessons already in hand.</p>
+  <table>
+    <tr><th>Claim</th><th>Why it failed</th></tr>
+    <tr><td>Emergent 3D space from a 2D substrate</td><td>Small-world scaling, not dimension <span class="seed" data-fn="14">14</span></td></tr>
+    <tr><td>Frequency clusters as particle masses</td><td>Real mass spacing statistics don't match either uniform or geometric spacing <span class="seed" data-fn="15">15</span></td></tr>
+    <tr><td>An information-carrying "DNA-like" substrate</td><td>Passive storage fails; replication works but is unreadable <span class="seed" data-fn="16">16</span></td></tr>
+    <tr><td>The framework explains the CMB "axis of evil"</td><td>Cubic lattice symmetry structurally forbids it</td></tr>
+  </table>
+  <div id="fn-14" class="sidenote"><span class="tag">Side note</span>Measured scaling was d<sub>s</sub> = 1.92 + 0.25&thinsp;ln(N), with no saturation for any power-law coupling tried &mdash; small-world scaling, not a genuine dimension. A separately-claimed "dimension ceiling" at 4.1 turned out to be a finite-size artifact of the specific system size tested (N&asymp;5000), not a real feature.</div>
+  <div id="fn-15" class="sidenote"><span class="tag">Side note</span>Real fermion masses span five orders of magnitude with gap ratios varying 10&#8309;&times; (rules out uniform spacing) and mass ratios varying 36&times; (rules out geometric spacing). The model's own condensation mechanism gives roughly uniform spacing &mdash; matching neither. A related idea, particles as 2D defects "detaching" to generate a third dimension, was never tested jointly because both of its load-bearing pieces had already failed independently.</div>
+  <div id="fn-16" class="sidenote"><span class="tag">Side note</span>Passive storage via point defects failed cleanly: signal and background noise share the same channel, so any pattern erodes regardless of creation rate. Reframed around replication, mutation, and selection instead: this part genuinely works &mdash; a deliberately weak lineage goes extinct while better-positioned rivals thrive, using only mechanisms already in the model, no new postulate. But a surviving lineage's history turns out to be practically unreadable from the final population: a one-dimensional scalar "genome" can't carry the statistical power real DNA gets from millions of independent positions.</div>
+</section>
+
+<section id="open" class="divider-top">
+  <div class="section-label">08</div>
+  <h2 class="section-title">Open questions</h2>
+  <p>In rough priority order.</p>
+  <ul>
+    <li style="margin-bottom:14px;"><strong>Substrate dimensionality.</strong> No postulate fixes a spatial dimension. Part II's 2D-vs-3D result is real evidence dimension matters, but nothing yet derives <em>why</em> three specifically.</li>
+    <li style="margin-bottom:14px;"><strong>No absolute scale.</strong> Every number in this document is a ratio, not a measurement &mdash; there is no established conversion to real seconds, meters, or joules anywhere in the project <span class="seed" data-fn="17">17</span>.</li>
+    <li style="margin-bottom:14px;"><strong>Gravity.</strong> See Part V. Completely open.</li>
+    <li style="margin-bottom:14px;"><strong>The dark:baryon ratio</strong>, and more fundamentally, what would make two excitations different <em>species</em> rather than the same thing differently bound <span class="seed" data-fn="18">18</span>.</li>
+    <li style="margin-bottom:14px;"><strong>The neighbor-clustering puzzle</strong> from Part IV &mdash; why stronger coupling makes correlation more consistent but smaller, unresolved as of this writing.</li>
+    <li style="margin-bottom:14px;"><strong>Whether &Sigma;&epsilon;=1 implies a genuinely finite universe</strong>, rather than just a per-volume normalization &mdash; directly relevant to why Mechanism 1 in Part V diverges.</li>
+    <li><strong>The escape-rate coefficient.</strong> A barrier-crossing mechanism was identified, but every tested route gives a slope of &minus;0.61 to &minus;0.88 against a predicted &minus;1.0. Needs an analytic microcanonical treatment, not more simulation.</li>
+  </ul>
+  <div id="fn-17" class="sidenote"><span class="tag">Side note</span>Two real attempts to bridge this were made and both failed instructively. Identifying the model's frequency-spread parameter directly with the real Hubble constant gave a vacuum-stability timescale of only 1.4 billion years &mdash; shorter than the actual age of the universe, ruling that specific bridge out. Separately, reconstructing the original dark-energy derivation's own implicit units showed they're self-inconsistent with the normalization convention used everywhere else in the later work. A real calibration would require properly reconstructing that original derivation's full unit system from scratch, not another guess.</div>
+  <div id="fn-18" class="sidenote"><span class="tag">Side note</span>The dark/visible structural split comes from 2D topological vortex physics: a single vortex has a divergent, unconfinable energy, while a neutral pair is finite &mdash; a genuine structural distinction between confined (visible-like) and free (dark-like) excitations, not assumed. But the actual ratio is not derived: it swings from 0.80:1 to 22.33:1 depending on temperature and an arbitrary binding cutoff. The deeper problem is conceptual: here "visible" just means "currently unbound," a population that would drift as the universe cools, while the real dark:baryon ratio has been fixed since nucleosynthesis &mdash; suggesting these are genuinely different species, not the same excitation in different binding states.</div>
+</section>
+</div>
+<div class="wrap">
+<section id="method" class="divider-top">
+  <div class="section-label">09</div>
+  <h2 class="section-title">Methodology</h2>
+  <p>Lessons that proved useful independent of whether any specific physics claim survives &mdash; worth keeping for anyone extending this work.</p>
+  <ul style="color:var(--dim); font-size:15.5px;">
+    <li style="margin-bottom:10px;">Coarsening and convergence need checking across widely separated timescales &mdash; never probe at a fixed time across different system sizes; use convergence events, not fixed run lengths.</li>
+    <li style="margin-bottom:10px;">Distinguish mathematical identities from genuine findings; check dimensionlessness before matching a quantity to a famous constant.</li>
+    <li style="margin-bottom:10px;">A hand-prescribed configuration can look like a beautiful, clean result while only measuring the cost of the ansatz, not the true minimum &mdash; always test via genuine relaxation from an unbiased start.</li>
+    <li style="margin-bottom:10px;">An interaction whose strength scales with raw, unnormalized distance can hide a much deeper structural problem than a units bug.</li>
+    <li style="margin-bottom:10px;">Don't conflate "does X emerge from simpler rules" with "what if X is simply postulated" &mdash; different questions, different tests.</li>
+    <li>Every formula uses some general mathematical technique &mdash; there is no such thing as a result built from zero prior mathematics. Be precise about which specific combination is actually new, rather than letting the framing drift.</li>
+  </ul>
+</section>
+
+<section id="contribute" class="divider-top">
+  <div class="section-label">10</div>
+  <h2 class="section-title">How to contribute</h2>
+  <p class="lede">This is a working draft, not a finished theory. If something here is wrong, incomplete, or worth pushing further, that's the point of opening it up.</p>
+  <div class="contrib-grid">
+    <div class="contrib-card">
+      <h4>If you're a physicist</h4>
+      <p>Gravity (Part V) is the biggest open gap. The &Delta;&sup3; separation law is the most promising unexplored connection &mdash; nobody has yet tested whether it says anything about attraction, as opposed to particle stability alone.</p>
+    </div>
+    <div class="contrib-card">
+      <h4>If you're a mathematician</h4>
+      <p>The neighbor-clustering puzzle in Part IV is a clean, well-posed, currently unresolved question: why does stronger coupling make correlation more consistent but smaller? A proper analytic (Born&ndash;Markov) treatment could replace the parameter scanning used so far.</p>
+    </div>
+    <div class="contrib-card">
+      <h4>If you're an AI system</h4>
+      <p>Every claim in this document is labeled by what supports it, and the failures are kept as visible as the wins on purpose &mdash; test before trusting, the same discipline this document was built with. The absolute-scale problem (&sect;8) is a well-defined reconstruction task, not a guess.</p>
+    </div>
+    <div class="contrib-card">
+      <h4>If you just want to explore</h4>
+      <p>The live simulator in Part II runs the real underlying calculation in your browser. Change the numbers. Break something. That's how most of the catches in this document were found.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0;">
+    <p>Written collaboratively over several months. Formulas, numbers, and results in this document reflect actual tested computation, not illustration &mdash; where something didn't work, it's said plainly in a side note rather than omitted.</p>
+  </div>
+</footer>
+</div>
+<script>
+/* ---------- Footnote (seed) toggle ---------- */
+document.querySelectorAll('.seed').forEach(seed => {
+  seed.addEventListener('click', () => {
+    const id = 'fn-' + seed.dataset.fn;
+    const note = document.getElementById(id);
+    const nowOpen = note.classList.toggle('open');
+    seed.classList.toggle('collapsed', nowOpen);
+  });
+});
+
+/* ---------- Hero seed-lattice animation ---------- */
+(function(){
+  const cv = document.getElementById('heroCanvas');
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  const N = 26;
+  const rng = () => Math.random();
+  const seeds = [];
+  for(let i=0;i<N;i++){
+    seeds.push({x: rng()*W, y: rng()*H, phase: rng()*Math.PI*2, freq: 0.4+rng()*0.5, r: 2.2+rng()*2});
+  }
+  function dist(a,b){ return Math.hypot(a.x-b.x, a.y-b.y); }
+  let t = 0;
+  function frame(){
+    t += 0.016;
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle = 'rgba(127,160,214,0.10)';
+    ctx.lineWidth = 1;
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        if(dist(seeds[i],seeds[j]) < 110){
+          ctx.beginPath();
+          ctx.moveTo(seeds[i].x, seeds[i].y);
+          ctx.lineTo(seeds[j].x, seeds[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    for(const s of seeds){
+      const glow = 0.5 + 0.5*Math.sin(t*s.freq + s.phase);
+      const on = glow > 0.72;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r + (on?1.4:0), 0, 7);
+      ctx.fillStyle = on ? 'rgba(232,166,89,'+(0.55+0.4*glow)+')' : 'rgba(127,160,214,'+(0.25+0.3*glow)+')';
+      ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* ---------- Reusable SVG bar chart ---------- */
+function drawBarChart(elId, data, opts){
+  opts = opts || {};
+  const w = 640, h = 220, padL = 56, padB = 34, padT = 14, padR = 20;
+  const plotW = w - padL - padR, plotH = h - padT - padB;
+  const useLog = opts.log;
+  const vals = data.map(d=>d.value);
+  const maxV = opts.max || Math.max(...vals);
+  const minV = useLog ? Math.min(...vals.filter(v=>v>0))*0.5 : 0;
+  function y(v){
+    if(useLog){
+      const lv = Math.log10(Math.max(v, minV));
+      const lmin = Math.log10(minV), lmax = Math.log10(maxV);
+      return padT + plotH - ((lv-lmin)/(lmax-lmin))*plotH;
+    }
+    return padT + plotH - (v/maxV)*plotH;
+  }
+  const bw = plotW / data.length * 0.55;
+  const gap = plotW / data.length;
+  let svg = `<svg viewBox="0 0 ${w} ${h}" style="width:100%; height:auto;">`;
+  svg += `<line x1="${padL}" y1="${padT}" x2="${padL}" y2="${h-padB}" stroke="#2A3346"/>`;
+  svg += `<line x1="${padL}" y1="${h-padB}" x2="${w-padR}" y2="${h-padB}" stroke="#2A3346"/>`;
+  data.forEach((d,i)=>{
+    const x = padL + gap*i + gap/2 - bw/2;
+    const y0 = y(useLog ? minV : 0);
+    const y1 = y(d.value);
+    const barH = y0 - y1;
+    const color = d.color || '#E8A659';
+    svg += `<rect x="${x}" y="${y1}" width="${bw}" height="${barH}" rx="3" fill="${color}" opacity="0.88"/>`;
+    svg += `<text x="${x+bw/2}" y="${y1-8}" fill="#D7DDE6" font-size="12" text-anchor="middle">${d.label2||d.value}</text>`;
+    svg += `<text x="${x+bw/2}" y="${h-padB+18}" fill="#7C879B" font-size="11.5" text-anchor="middle">${d.label}</text>`;
+  });
+  svg += `</svg>`;
+  document.getElementById(elId).innerHTML =
+    (opts.title ? `<div class="chart-title">${opts.title}</div>` : '') + svg +
+    (opts.caption ? `<div class="chart-caption">${opts.caption}</div>` : '');
+}
+
+/* ---------- Reusable SVG line chart (log-x optional) ---------- */
+function drawLineChart(elId, series, opts){
+  opts = opts || {};
+  const w = 640, h = 230, padL = 56, padB = 34, padT = 14, padR = 20;
+  const plotW = w - padL - padR, plotH = h - padT - padB;
+  const allX = series.flatMap(s=>s.points.map(p=>p.x));
+  const allY = series.flatMap(s=>s.points.map(p=>p.y));
+  const xMin = opts.xMin ?? Math.min(...allX), xMax = opts.xMax ?? Math.max(...allX);
+  const yMin = opts.yMin ?? 0, yMax = opts.yMax ?? Math.max(...allY)*1.1;
+  function X(v){ return padL + ((v-xMin)/(xMax-xMin))*plotW; }
+  function Y(v){ return padT + plotH - ((v-yMin)/(yMax-yMin))*plotH; }
+  let svg = `<svg viewBox="0 0 ${w} ${h}" style="width:100%; height:auto;">`;
+  svg += `<line x1="${padL}" y1="${padT}" x2="${padL}" y2="${h-padB}" stroke="#2A3346"/>`;
+  svg += `<line x1="${padL}" y1="${h-padB}" x2="${w-padR}" y2="${h-padB}" stroke="#2A3346"/>`;
+  [yMin, (yMin+yMax)/2, yMax].forEach(v=>{
+    svg += `<text x="${padL-8}" y="${Y(v)+4}" fill="#7C879B" font-size="10.5" text-anchor="end">${v.toFixed(2)}</text>`;
+    svg += `<line x1="${padL}" y1="${Y(v)}" x2="${w-padR}" y2="${Y(v)}" stroke="#1D2434"/>`;
+  });
+  series.forEach(s=>{
+    const pts = s.points.map(p=>`${X(p.x)},${Y(p.y)}`).join(' ');
+    svg += `<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="2.2"/>`;
+    s.points.forEach(p=>{
+      svg += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="3.4" fill="${s.color}"/>`;
+    });
+  });
+  svg += `</svg>`;
+  let legend = '';
+  if(series.length>1){
+    legend = '<div style="display:flex; gap:18px; margin-top:6px; font-size:12px;">' +
+      series.map(s=>`<span style="color:${s.color};">&#9679; ${s.name}</span>`).join('') + '</div>';
+  }
+  document.getElementById(elId).innerHTML =
+    (opts.title ? `<div class="chart-title">${opts.title}</div>` : '') + svg + legend +
+    (opts.caption ? `<div class="chart-caption">${opts.caption}</div>` : '');
+}
+</script>
+<script>
+/* ---------- Chart 1: Arrow of time ---------- */
+drawBarChart('chart-expansion', [
+  {label:'Expanding', value:0.0029, label2:'0.0029', color:'#7FBF8F'},
+  {label:'Static', value:0.448, label2:'0.448', color:'#7FA0D6'},
+  {label:'Contracting', value:5.96, label2:'5.96', color:'#C06B63'},
+], {log:true, title:'Clock-rate spread by cosmic regime (log scale)', caption:'Only expansion collapses clock rates enough for a shared, one-directional time to exist.'});
+
+/* ---------- Chart 2: CHSH ---------- */
+drawBarChart('chart-chsh', [
+  {label:'Definite value (any model)', value:2.0, label2:'2.000', color:'#7FA0D6'},
+  {label:'This model, entangled', value:2.828, label2:'2.828', color:'#E8A659'},
+  {label:'Never observed, any lab', value:4.0, label2:'4.000', color:'#4E5A70'},
+], {max:4.2, title:'CHSH correlation strength', caption:'Bell\u2019s theorem proves 2.0 is the ceiling for any pre-existing, definite value \u2014 no matter how the model is dressed up. Genuine superposition reaches the real experimental limit exactly.'});
+
+/* ---------- Chart 3: growing bath ---------- */
+drawLineChart('chart-bath', [
+  {name:'purity (1.0 = still superposed)', color:'#7FA0D6', points:[
+    {x:2,y:0.815},{x:4,y:0.747},{x:6,y:0.720},{x:8,y:0.688}
+  ]}
+], {yMin:0.6, yMax:0.85, title:'Decoherence vs. bath size, coupling strength held fixed', caption:'More seeds existing \u2014 not stronger coupling \u2014 drives collapse out of superposition. Confirmed for bath sizes 2\u20138; larger sizes hit a computational ceiling.'});
+
+/* ---------- Chart 4: decoherence dip ---------- */
+drawLineChart('chart-decoherence', [
+  {name:'purity', color:'#E8A659', points:[
+    {x:0.0,y:1.000},{x:0.0097,y:0.9993},{x:0.2619,y:0.8205},{x:0.7250,y:0.8820},{x:1.0007,y:0.9349}
+  ]}
+], {yMin:0.78, yMax:1.02, title:'Decoherence vulnerability vs. separation', caption:'Protected at both small and large separation, with a real vulnerability dip in between \u2014 not a monotonic law.'});
+
+/* ---------- Chart 5: neighbor clustering ---------- */
+drawLineChart('chart-clustering', [
+  {name:'mean correlation', color:'#E8A659', points:[
+    {x:0.15,y:-0.052},{x:0.3,y:-0.070},{x:0.6,y:-0.017},{x:1.0,y:-0.005},{x:2.0,y:0.003}
+  ]},
+  {name:'spread across trials (std)', color:'#7FA0D6', points:[
+    {x:0.15,y:0.119},{x:0.3,y:0.048},{x:0.6,y:0.008},{x:1.0,y:0.012},{x:2.0,y:0.008}
+  ]}
+], {yMin:-0.08, yMax:0.14, title:'Neighbor correlation vs. coupling strength', caption:'Stronger coupling makes the result more consistent (spread shrinks) but the correlation itself shrinks toward zero \u2014 the opposite of the hypothesized clustering threshold. Unresolved.'});
+
+/* ---------- Dimension diagram (honest schematic, not fabricated data) ---------- */
+document.getElementById('chart-dimension').innerHTML = `
+  <div class="chart-title">2D vs. 3D under persistent frequency disorder</div>
+  <div style="display:flex; gap:16px; margin-top:10px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:220px; background:rgba(192,107,99,0.06); border:1px solid #6B3A36; border-radius:8px; padding:16px;">
+      <div class="mono" style="color:#C06B63; font-size:13px; margin-bottom:6px;">2D</div>
+      <div style="font-size:14px; color:#D7DDE6;">Defect density never decays, checked across ~3 decades of simulated time \u2014 a genuine dynamic steady state, not slow coarsening.</div>
+    </div>
+    <div style="flex:1; min-width:220px; background:rgba(127,191,143,0.06); border:1px solid #3d6b47; border-radius:8px; padding:16px;">
+      <div class="mono" style="color:#7FBF8F; font-size:13px; margin-bottom:6px;">3D</div>
+      <div style="font-size:14px; color:#D7DDE6;">A real, sharp, size-independent transition at <span class="mono">K/K<sub>c</sub> \u2248 2.5</span>. Above it, defects vanish and long-range order becomes real.</div>
+    </div>
+  </div>
+  <div class="chart-caption">Confirmed by matching results across two different system sizes at the same threshold \u2014 not a fitted curve.</div>
+`;
+</script>
+<script>
+/* ---------- Live tunneling simulator (validated imaginary-time propagation) ---------- */
+function laplacianSim(psi, dx, N){
+  const lap = new Float64Array(N);
+  const invdx2 = 1/(dx*dx);
+  for(let i=1;i<N-1;i++){ lap[i] = (psi[i+1]-2*psi[i]+psi[i-1])*invdx2; }
+  return lap;
+}
+function evolveSim(psi0, V, dx, N, dtau, steps){
+  let psi = psi0.slice();
+  for(let s=0;s<steps;s++){
+    const lap = laplacianSim(psi, dx, N);
+    const Hpsi = new Float64Array(N);
+    for(let i=0;i<N;i++){ Hpsi[i] = -0.5*lap[i] + V[i]*psi[i]; }
+    let norm2 = 0;
+    for(let i=0;i<N;i++){ psi[i] = psi[i] - dtau*Hpsi[i]; norm2 += psi[i]*psi[i]*dx; }
+    const norm = Math.sqrt(norm2);
+    for(let i=0;i<N;i++){ psi[i] /= norm; }
+  }
+  const lap = laplacianSim(psi, dx, N);
+  let E = 0;
+  for(let i=0;i<N;i++){ E += psi[i]*(-0.5*lap[i] + V[i]*psi[i])*dx; }
+  return E;
+}
+function runTunnelingSim(Delta){
+  const N = 260;
+  const L = Delta + 4.0;
+  const dx = 2*L/(N-1);
+  const x = new Float64Array(N);
+  const V = new Float64Array(N);
+  for(let i=0;i<N;i++){ x[i] = -L + i*dx; V[i] = Math.pow(x[i]*x[i]-Delta*Delta,2)/4; }
+  const dtau = 0.4*dx*dx;
+  const steps = 7000;
+  const sym = new Float64Array(N);
+  const anti = new Float64Array(N);
+  for(let i=0;i<N;i++){
+    const a = Math.exp(-0.5*Math.pow(x[i]-Delta,2));
+    const b = Math.exp(-0.5*Math.pow(x[i]+Delta,2));
+    sym[i]=a+b; anti[i]=a-b;
+  }
+  const E0 = evolveSim(sym, V, dx, N, dtau, steps);
+  const E1 = evolveSim(anti, V, dx, N, dtau, steps);
+  return {E0, E1, split: E1-E0};
+}
+function regimeOf(split){
+  if(split < 1e-4) return {text:'locks in, never switches again', color:'#C06B63'};
+  if(split < 0.1) return {text:'switches, but slowly', color:'#E8A659'};
+  return {text:'keeps switching between the two states', color:'#7FBF8F'};
+}
+function updateSim(){
+  const Delta = parseFloat(document.getElementById('simDelta').value);
+  document.getElementById('simDeltaVal').textContent = Delta.toFixed(2);
+  const r = runTunnelingSim(Delta);
+  document.getElementById('simE0').textContent = r.E0.toFixed(4);
+  document.getElementById('simE1').textContent = r.E1.toFixed(4);
+  document.getElementById('simSplit').textContent = r.split.toExponential(3);
+  const reg = regimeOf(r.split);
+  const el = document.getElementById('simRegime');
+  el.textContent = reg.text;
+  el.style.color = reg.color;
+}
+function setSimDelta(v){
+  document.getElementById('simDelta').value = v;
+  updateSim();
+}
+document.getElementById('simDelta').addEventListener('input', updateSim);
+updateSim();
+</script>
+</body>
+</html>
