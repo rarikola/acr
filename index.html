@@ -1,42 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Capital Research</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #0f172a; /* Clean, dark professional background */
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 3rem;
-            letter-spacing: -0.05em;
-            margin-bottom: 8px;
-            color: #38bdf8; /* Modern blue accent */
-        }
-        p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astra Capital Research</title>
+<meta name="description" content="Daily pre-market earnings screen: low-priced stocks with strong fundamentals among companies that just reported.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f2a4a'/%3E%3Cpath d='M16 6l3 7h7l-5.6 4.3L22.5 25 16 20.4 9.5 25l2.1-7.7L6 13h7z' fill='%23e8b64c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#16202c; --muted:#5b6673; --line:#e3e1da;
+  --brand:#0f2a4a; --accent:#b8862b; --good:#1d7a4b; --bad:#b33a3a;
+  --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e141b; --surface:#151d27; --ink:#e7ebf0; --muted:#98a3b1; --line:#253140;
+    --brand:#cfe0f5; --accent:#e8b64c; --good:#4fc28a; --bad:#ef7a7a;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+header.site{border-bottom:1px solid var(--line);background:var(--surface)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{flex:none}
+.brand b{font-family:Georgia,"Times New Roman",serif;font-size:1.3rem;letter-spacing:.2px;color:var(--brand)}
+.brand span{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:520px){.brand span{display:none}.brand b{font-size:1.1rem}}
+nav{white-space:nowrap}
+nav a{text-decoration:none;color:var(--muted);font-size:.92rem;margin-left:18px}
+nav a:hover{color:var(--ink)}
+main .wrap{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:40px;padding-top:36px;padding-bottom:56px}
+@media (max-width:860px){main .wrap{grid-template-columns:1fr;gap:28px}}
+article{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px 36px;min-width:0}
+@media (max-width:600px){article{padding:22px 18px}}
+.kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+article h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:1.9rem;line-height:1.25;margin:.3em 0 .2em;color:var(--brand)}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:22px}
+.summary{font-size:1.05rem;border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:0 0 26px}
+article h2{font-size:1.15rem;margin:30px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+article h3{font-size:1.02rem;margin:22px 0 6px}
+article ul{padding-left:1.2em;margin:8px 0}
+article li{margin:4px 0}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:14px 0;background:var(--bg)}
+.card .tk{font-weight:700;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--brand)}
+.up{color:var(--good);font-weight:600}.down{color:var(--bad);font-weight:600}
+.tablewrap{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.note{font-size:.88rem;color:var(--muted)}
+.sources{font-size:.85rem;color:var(--muted);word-break:break-word}
+.sources a{color:var(--muted)}
+aside h4{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+aside ol{list-style:none;padding:0;margin:0 0 28px}
+aside li a{display:block;padding:9px 12px;border-radius:6px;text-decoration:none;border:1px solid transparent}
+aside li a:hover{background:var(--surface);border-color:var(--line)}
+aside li a.active{background:var(--surface);border-color:var(--line);box-shadow:inset 3px 0 0 var(--accent)}
+aside li small{display:block;color:var(--muted);font-size:.8rem;line-height:1.35;margin-top:2px}
+.about{font-size:.88rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+footer .wrap{padding-top:22px;padding-bottom:30px}
+.empty{color:var(--muted)}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Astra Capital Research</h1>
-        <p>Website Coming Soon</p>
-    </div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#/">
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f2a4a"/><path d="M16 6l3 7h7l-5.6 4.3L22.5 25 16 20.4 9.5 25l2.1-7.7L6 13h7z" fill="#e8b64c"/></svg>
+      <div><b>Astra Capital Research</b><span>Daily pre-market earnings screen</span></div>
+    </a>
+    <nav><a href="#/">Latest</a><a href="#/about">About</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <article id="report"><p class="empty">Loading…</p></article>
+    <aside>
+      <h4>Archive</h4>
+      <ol id="archive"></ol>
+      <div class="about">
+        <h4>Method</h4>
+        Each trading morning we review companies that reported since the prior session, focusing on shares under ~$15 with liquid options, and keep only those showing roughly 20%+ revenue growth, profitability or improving margins, and strong guidance.
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Disclaimer.</strong> Content on this site is for informational and educational purposes only and is not investment advice or a recommendation to buy or sell any security. Figures come from company releases and public coverage and may contain errors; verify before acting. Options involve substantial risk. © <span id="yr"></span> Astra Capital Research.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reports = [];
+  var $r = document.getElementById('report'), $a = document.getElementById('archive');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  function fmtDate(d){
+    var p = d.split('-'); var dt = new Date(+p[0], +p[1]-1, +p[2]);
+    return dt.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  }
+  function shortDate(d){
+    var p = d.split('-'); var dt = new Date(+p[0], +p[1]-1, +p[2]);
+    return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function renderArchive(active){
+    $a.innerHTML = reports.map(function(r){
+      return '<li><a href="#/'+r.date+'"'+(r.date===active?' class="active"':'')+'>'+shortDate(r.date)+
+             '<small>'+esc(r.headline||'')+'</small></a></li>';
+    }).join('') || '<li class="empty">No reports yet.</li>';
+  }
+
+  function renderAbout(){
+    renderArchive(null);
+    $r.innerHTML = '<div class="kicker">About</div><h1>Astra Capital Research</h1>'+
+      '<p>A daily pre-market screen of companies that reported earnings since the previous session. The focus is low-priced shares (roughly under $15) with actively traded options, filtered for strong fundamentals:</p>'+
+      '<ul><li>Revenue growth of roughly 20%+ year over year, or clearly accelerating</li><li>Profitable, or with clearly improving margins / EBITDA</li><li>A beat on revenue and/or EPS, with raised or strong guidance</li><li>Healthy cash flow and manageable debt</li></ul>'+
+      '<p>Each report lists any finalists with key numbers and red flags, plus notable names that failed the filter and why. Reports often find nothing that qualifies, and that is reported plainly.</p>'+
+      '<p class="note">Option quotes before 9:30am ET are stale, and implied volatility typically falls after earnings. This site is research only and not investment advice.</p>';
+    document.title = 'About · Astra Capital Research';
+  }
+
+  function renderReport(date){
+    if(!reports.length){ $r.innerHTML='<p class="empty">No reports published yet.</p>'; renderArchive(null); return; }
+    var r = reports.find(function(x){return x.date===date;}) || reports[0];
+    renderArchive(r.date);
+    $r.innerHTML = '<div class="kicker">Pre-market earnings screen</div>'+
+      '<h1>'+esc(r.headline||'Daily screen')+'</h1>'+
+      '<div class="meta">'+fmtDate(r.date)+'</div>'+
+      (r.summary?'<p class="summary">'+esc(r.summary)+'</p>':'')+
+      r.html +
+      (r.sources && r.sources.length ? '<h2>Sources</h2><ul class="sources">'+r.sources.map(function(s){
+        return '<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener nofollow">'+esc(s.title||s.url)+'</a></li>';}).join('')+'</ul>' : '');
+    document.title = shortDate(r.date)+' · Astra Capital Research';
+    window.scrollTo(0,0);
+  }
+
+  function route(){
+    var h = location.hash.replace(/^#\/?/,'');
+    if(h==='about') renderAbout(); else renderReport(h);
+  }
+
+  fetch('reports.json',{cache:'no-cache'}).then(function(res){return res.json();}).then(function(data){
+    reports = (data.reports||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;});
+    route();
+  }).catch(function(){ $r.innerHTML='<p class="empty">Could not load reports.</p>'; });
+  window.addEventListener('hashchange', route);
+})();
+</script>
 </body>
 </html>
-
