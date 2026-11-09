@@ -1,0 +1,72 @@
+{
+ "reports": [
+  {
+   "date": "2026-11-09",
+   "headline": "Light Monday: nothing qualifies; Kamada profitable but growth too slow",
+   "summary": "Mondays are light. The only cheap reporter found, Kamada, is profitable with raised guidance but grows only ~11%. Friday after-close reports and small-cap movers pages could not be retrieved, so a small name may have been missed.",
+   "html": "\n<h2>Closest cheap name</h2>\n<div class=\"card\"><span class=\"tk\">KMDA</span> · Kamada · ~$7.37 pre-market <span class=\"up\">+1.9%</span>\n<ul>\n<li>Q3 revenue $52.0M, +11% YoY (slight miss vs $52.8M est.); adj. EPS $0.14 vs $0.13 est.</li>\n<li>Net income $8M (+51%); adj. EBITDA $15.2M (+30%, 29% margin)</li>\n<li>Raised 2026 guidance to $205–208M revenue, $52–54M adj. EBITDA; 2027 guidance due in January</li>\n<li>$75M cash, minimal debt, nine-month operating cash flow $37.6M; pays a dividend</li>\n<li>Fails because revenue growth is low-teens, not 20%+; options likely thin; near 52-week low ($6.60–9.35)</li>\n</ul></div>\n<h2>Larger reporters this morning (all well above $15)</h2>\n<div class=\"tablewrap\"><table>\n<tr><th>Ticker</th><th>Pre-market</th><th>Note</th></tr>\n<tr><td>CEG</td><td class=\"up\">+4.0%</td><td>Est. $3.89 EPS</td></tr>\n<tr><td>NRG</td><td class=\"up\">+4.2%</td><td>Est. $3.36 EPS</td></tr>\n<tr><td>KKR</td><td class=\"up\">+3.5%</td><td>Est. $1.60 EPS</td></tr>\n<tr><td>CNH</td><td class=\"up\">+1.7%</td><td>Selling stake in construction unit to Kobelco ($1B valuation)</td></tr>\n<tr><td>SGI</td><td class=\"down\">−7.1%</td><td>Down 5.5% Friday too</td></tr>\n</table></div>\n<p>Barrick (B) and monday.com (MNDY) also reported; prices and moves not confirmed.</p>\n<h2>Macro</h2>\n<p>NVDA −5% pre-market after its board opened an independent review of reports that the CEO was the target of a foreign intelligence effort; AI-related names may be pressured.</p>\n<h2>After today's close</h2>\n<p>PLUG, MARA, LCID, ACHR, HIMS, RKLB, ASTS, TTD.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>\n",
+   "sources": [
+    {
+     "title": "TipRanks, stocks reporting Nov 9",
+     "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-9-2026"
+    },
+    {
+     "title": "TipRanks, implied earnings moves Nov 9",
+     "url": "https://www.tipranks.com/news/options-volatility-and-implied-earnings-moves-today-november-09-2026"
+    },
+    {
+     "title": "Investing.com, Kamada Q3 2026 call",
+     "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-kamada-tops-q3-2026-profit-view-shares-rise-premarket-93CH-5012387"
+    },
+    {
+     "title": "Current Logic, Morning Brief Nov 9",
+     "url": "https://currentlogic.substack.com/p/the-morning-brief-november-9-2026"
+    },
+    {
+     "title": "Yahoo/Zacks, Company News Nov 9",
+     "url": "https://ca.finance.yahoo.com/news/company-news-nov-9-2026-102100919.html"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-06",
+   "headline": "No clean pass; Grindr closest, Compass and SoundHound fail",
+   "summary": "No cheap name clearly passed every filter after Thursday's close and this morning's open. Grindr came closest on growth and guidance but likely trades above the $15 cutoff. The backdrop was a heavy tech selloff (Nasdaq −5.5% Thursday, VIX ~28).",
+   "html": "\n<h2>Closest to qualifying</h2>\n<div class=\"card\"><span class=\"tk\">GRND</span> · Grindr · price not confirmed (~$16.60 in August)\n<ul>\n<li>Q3 revenue $141.4M, <b>+22% YoY</b>, organic (PurposeMed closed after quarter-end)</li>\n<li>Adj. EBITDA $61.7M, 43.7% margin (down from 47.4%)</li>\n<li><b>Raised 2026 guidance</b> to ~$560M revenue / ~$236M adj. EBITDA; initial 2027 outlook ≥$705M revenue (~26% growth), ≥$275M EBITDA</li>\n<li>Red flags: GAAP net loss −$6.6M driven by a $32.3M litigation charge; interest expense ~$6.8M/qtr; likely above the $15 price cutoff; EPS vs. estimate (~$0.17) not confirmed</li>\n</ul></div>\n<h2>Cheap names that failed the filter</h2>\n<ul>\n<li><b>COMP (Compass), ~$9.25</b>: revenue $3.9B (+111%) is merger-driven (organic ~+7%); EPS beat ($0.07 vs $0.04) but Q4 revenue and EBITDA guidance below consensus; $3.1B long-term debt</li>\n<li><b>SOUN (SoundHound)</b>: revenue $62.4M (+48%, partly LivePerson); adj. EBITDA −$20.7M, worse YoY; gross margin 34% vs 43%</li>\n<li><b>OPEN (Opendoor)</b>: revenue +12%; net loss widened to $218M; gross margin 3.7%</li>\n<li><b>NRDS (NerdWallet)</b>: revenue +11%; net income −43%; Q4 revenue guided ~−13% YoY</li>\n<li><b>FIGS / LYFT</b>: releases could not be retrieved</li>\n</ul>\n<h2>Larger movers for context</h2>\n<p>NET +12.6% (revenue +39%, raised guide), ABNB +11.4%, IREN +18%, AAOI +5% (revenue +128%). Lower: TEAM −16%, FIVN −17%, DKNG ~−18%, AXON ~−14%.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>\n",
+   "sources": [
+    {
+     "title": "Earnings Whispers, Nov 5 calendar",
+     "url": "https://www.earningswhispers.com/calendar/20261105"
+    },
+    {
+     "title": "CappNotes, Closing Look Nov 5",
+     "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-5"
+    },
+    {
+     "title": "Yahoo Finance, premarket movers Nov 6",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-airbnb-cloudflare-iren-122736112.html"
+    },
+    {
+     "title": "Grindr Q3 2026 release",
+     "url": "https://www.businesswire.com/news/home/20261105049404/en/Grindr-Inc.-Reports-Third-Quarter-2026-Revenue-Growth-of-22-Raises-2026-Guidance-and-Provides-Initial-2027-Outlook"
+    },
+    {
+     "title": "Compass Q3 2026 release",
+     "url": "https://investors.compass.com/news-events/press-releases/detail/182/compass-inc-reports-record-third-quarter-2026-results"
+    },
+    {
+     "title": "SoundHound 8-K Ex. 99.1",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001840856/000184085626000025/soun-20261105ex991earnings.htm"
+    },
+    {
+     "title": "Opendoor Q3 2026 release",
+     "url": "https://www.globenewswire.com/news-release/2026/11/05/3397027/0/en/opendoor-reports-third-quarter-2026-financial-results.html"
+    },
+    {
+     "title": "NerdWallet 8-K Ex. 99.1",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001625278/000162527826000069/earningsreleaseq3fy26.htm"
+    }
+   ]
+  }
+ ]
+}
