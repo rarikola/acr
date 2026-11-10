@@ -1,7 +1,9 @@
 {
   "name": "acr",
   "compatibility_date": "2026-08-10",
+  "main": "src/worker.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS"
   }
 }

@@ -1,0 +1,26 @@
+{
+ "horizon_days": 30,
+ "rules": "Every finalist from the daily pre-market earnings screen is added here on its report date and never edited or removed. Entry is the official opening price on the pick date; open picks show the live (delayed) price; each pick closes at the closing price on the first trading day on or after 30 calendar days, and the result is then frozen. Returns are compared with SPY over the same window.",
+ "picks": [
+  {
+   "id": "2026-11-10-QMCO",
+   "date": "2026-11-10",
+   "symbol": "QMCO",
+   "name": "Quantum Corp",
+   "direction": "long",
+   "premarket_ref": 19.7,
+   "report": "/#/2026-11-10",
+   "note": "FQ2 revenue +43% YoY, adj. EBITDA $11.1M vs $0.5M, no debt"
+  },
+  {
+   "id": "2026-11-10-VG",
+   "date": "2026-11-10",
+   "symbol": "VG",
+   "name": "Venture Global",
+   "direction": "long",
+   "premarket_ref": 12.44,
+   "report": "/#/2026-11-10",
+   "note": "Q3 revenue +43% YoY, FY26 adj. EBITDA guide raised to $10.0–10.3B"
+  }
+ ]
+}

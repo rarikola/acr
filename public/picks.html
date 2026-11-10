@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick Tracker · Astra Capital Research</title>
+<meta name="description" content="Every finalist from the Astra Capital Research daily earnings screen, with entry price, live price and return versus SPY.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f2a4a'/%3E%3Cpath d='M16 6l3 7h7l-5.6 4.3L22.5 25 16 20.4 9.5 25l2.1-7.7L6 13h7z' fill='%23e8b64c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#16202c; --muted:#5b6673; --line:#e3e1da;
+  --brand:#0f2a4a; --accent:#b8862b; --good:#1d7a4b; --bad:#b33a3a;
+  --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e141b; --surface:#151d27; --ink:#e7ebf0; --muted:#98a3b1; --line:#253140;
+    --brand:#cfe0f5; --accent:#e8b64c; --good:#4fc28a; --bad:#ef7a7a;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+header.site{border-bottom:1px solid var(--line);background:var(--surface)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{flex:none}
+.brand b{font-family:Georgia,"Times New Roman",serif;font-size:1.3rem;letter-spacing:.2px;color:var(--brand)}
+.brand span{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:520px){.brand span{display:none}.brand b{font-size:1.1rem}}
+nav{white-space:nowrap}
+nav a{text-decoration:none;color:var(--muted);font-size:.92rem;margin-left:18px}
+nav a:hover,nav a.on{color:var(--ink)}
+@media (max-width:420px){nav a{margin-left:12px}}
+main .wrap{padding-top:36px;padding-bottom:56px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px 36px}
+@media (max-width:600px){.panel{padding:22px 16px}}
+.kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:1.9rem;line-height:1.25;margin:.3em 0 .2em;color:var(--brand)}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+h2{font-size:1.15rem;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:8px 0 6px}
+.tile{border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:12px 14px}
+.tile small{display:block;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tile b{display:block;font-size:1.45rem;font-variant-numeric:tabular-nums;margin-top:2px}
+.tile .sub{display:block;font-size:.8rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:760px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:var(--bg)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tk{font-weight:700;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--brand)}
+.co{color:var(--muted);font-size:.85rem;display:block;white-space:normal;max-width:220px}
+.up{color:var(--good);font-weight:600}.down{color:var(--bad);font-weight:600}.flat{color:var(--muted)}
+.badge{display:inline-block;font-size:.74rem;font-weight:600;letter-spacing:.03em;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.badge.open{color:var(--accent);border-color:var(--accent)}
+.badge.closed{color:var(--ink)}
+@media (max-width:640px){
+  .tablewrap{border:0;overflow:visible}
+  table{min-width:0}
+  table tr:first-child{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{border:1px solid var(--line);border-radius:8px;margin:0 0 12px;padding:10px 14px;background:var(--bg)}
+  td{border:0;padding:3px 0;white-space:normal;display:flex;justify-content:space-between;gap:12px;text-align:right}
+  td.n{text-align:right}
+  td::before{content:attr(data-l);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;flex:none}
+  td.tkcell{display:block;text-align:left;padding-bottom:6px}
+  td.tkcell::before{content:none}
+  .co{display:inline;margin-left:6px}
+  td.empty{display:block;text-align:left}
+  td.empty::before{content:none}
+}
+.short{font-size:.72rem;color:var(--bad);font-weight:600;margin-left:4px}
+.note{font-size:.88rem;color:var(--muted)}
+.empty{color:var(--muted);padding:18px 12px}
+ul.rules{padding-left:1.2em;margin:8px 0}
+ul.rules li{margin:4px 0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+footer .wrap{padding-top:22px;padding-bottom:30px}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/#/">
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f2a4a"/><path d="M16 6l3 7h7l-5.6 4.3L22.5 25 16 20.4 9.5 25l2.1-7.7L6 13h7z" fill="#e8b64c"/></svg>
+      <div><b>Astra Capital Research</b><span>Daily pre-market earnings screen</span></div>
+    </a>
+    <nav><a href="/#/">Latest</a><a href="/picks.html" class="on">Picks</a><a href="/#/about">About</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="panel">
+      <div class="kicker">Track record</div>
+      <h1>Pick Tracker</h1>
+      <div class="meta" id="meta">Loading prices…</div>
+
+      <div class="tiles" id="tiles"></div>
+
+      <h2>Open picks</h2>
+      <div class="tablewrap"><table id="open"></table></div>
+
+      <h2>Closed picks</h2>
+      <div class="tablewrap"><table id="closed"></table></div>
+
+      <h2>How picks are scored</h2>
+      <ul class="rules">
+        <li>Every finalist from the daily screen is added on its report date. Entries are never edited or removed, including losers.</li>
+        <li><b>Entry</b> is the official opening price on the pick date. Reports are published before the open, so this is the first price anyone could trade at.</li>
+        <li><b>Open picks</b> use the latest quote, delayed about 15 minutes.</li>
+        <li>Each pick <b>closes</b> at the closing price on the first trading day on or after <span id="hz">30</span> calendar days. Its result is then frozen.</li>
+        <li><b>vs SPY</b> is the pick's return minus SPY's return over the same window.</li>
+        <li>Returns are for the shares, not for any option trade. Dividends and fees are ignored.</li>
+      </ul>
+      <p class="note">The full pick log is public at <a href="/picks.json">picks.json</a>, and every change is in the site's commit history.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Disclaimer.</strong> Content on this site is for informational and educational purposes only and is not investment advice or a recommendation to buy or sell any security. Past results do not predict future results. Prices may be delayed or contain errors. Options involve substantial risk. © <span id="yr"></span> Astra Capital Research.
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var $meta = document.getElementById('meta'), $tiles = document.getElementById('tiles');
+  var $open = document.getElementById('open'), $closed = document.getElementById('closed');
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function money(v){if(v==null)return '—';var n=Number(v);return '$'+n.toFixed(n<1?3:2);}
+  function pct(v){
+    if(v==null) return '<span class="flat">—</span>';
+    var cls = v>0.005?'up':(v<-0.005?'down':'flat');
+    return '<span class="'+cls+'">'+(v>0?'+':'')+Number(v).toFixed(2)+'%</span>';
+  }
+  function d(iso){
+    if(!iso) return '—';
+    var p=iso.split('-'); return new Date(+p[0],+p[1]-1,+p[2]).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  }
+  function tile(label,val,sub){return '<div class="tile"><small>'+label+'</small><b>'+val+'</b>'+(sub?'<span class="sub">'+sub+'</span>':'')+'</div>';}
+
+  function head(closed){
+    return '<tr><th>Picked</th><th>Ticker</th><th class="n">Entry (open)</th><th class="n">'+(closed?'Exit':'Now')+'</th>'+
+           '<th class="n">Return</th><th class="n">SPY</th><th class="n">vs SPY</th><th>Status</th></tr>';
+  }
+  function row(r){
+    var name = r.report ? '<a href="'+esc(r.report)+'" class="co">'+esc(r.name)+'</a>' : '<span class="co">'+esc(r.name)+'</span>';
+    var status;
+    if(r.status==='closed') status='<span class="badge closed">Closed '+d(r.price_date)+'</span>';
+    else if(r.status==='open') status='<span class="badge open">Open · day '+(r.days_held||0)+'</span><br><span class="note">closes '+d(r.exit_target)+'</span>';
+    else if(r.status==='nodata') status='<span class="badge">No price data</span>';
+    else status='<span class="badge">Awaiting open</span>';
+    var closed = r.status==='closed';
+    return '<tr><td data-l="Picked">'+d(r.date)+'</td>'+
+      '<td class="tkcell"><span class="tk">'+esc(r.symbol)+'</span>'+(r.direction==='short'?'<span class="short">SHORT</span>':'')+name+'</td>'+
+      '<td class="n" data-l="Entry (open)"><span>'+money(r.entry)+(r.entry_date && r.entry_date!==r.date?' <span class="note">'+d(r.entry_date)+'</span>':'')+'</span></td>'+
+      '<td class="n" data-l="'+(closed?'Exit':'Now')+'">'+money(r.price)+'</td>'+
+      '<td class="n" data-l="Return">'+pct(r.ret)+'</td><td class="n" data-l="SPY">'+pct(r.spy_ret)+'</td><td class="n" data-l="vs SPY">'+pct(r.vs_spy)+'</td>'+
+      '<td data-l="Status"><span>'+status.replace('<br>',' ')+'</span></td></tr>';
+  }
+  function table(el, rows, closed, emptyMsg){
+    el.innerHTML = head(closed) + (rows.length ? rows.map(row).join('') : '<tr><td colspan="8" class="empty">'+emptyMsg+'</td></tr>');
+  }
+
+  function render(data){
+    document.getElementById('hz').textContent = data.horizon_days || 30;
+    var picks = data.picks || [], s = data.summary || {};
+    var open = picks.filter(function(r){return r.status!=='closed';});
+    var closed = picks.filter(function(r){return r.status==='closed';});
+    $tiles.innerHTML =
+      tile('Picks', s.total||0, (s.open||0)+' open · '+(s.closed||0)+' closed') +
+      tile('Win rate', s.win_rate==null?'—':s.win_rate+'%', s.win_rate_closed==null?'all scored picks':'closed: '+s.win_rate_closed+'%') +
+      tile('Avg return', s.avg_return==null?'—':pct(s.avg_return), 'per pick, entry to now/exit') +
+      tile('Avg vs SPY', s.avg_vs_spy==null?'—':pct(s.avg_vs_spy), 'same window as each pick') +
+      tile('Best / worst', s.best?esc(s.best)+' / '+esc(s.worst):'—', '');
+    table($open, open, false, 'No open picks right now.');
+    table($closed, closed, true, 'No closed picks yet. The first ones close '+(open.length?d(open.map(function(r){return r.exit_target;}).sort()[0]):'after 30 days')+'.');
+    var t = new Date(data.updated);
+    $meta.textContent = 'Prices delayed ~15 minutes · updated '+t.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+  }
+
+  // If live prices can't be loaded, still show the pick log itself.
+  function fallback(){
+    fetch('/picks.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(p){
+      var rows=(p.picks||[]).map(function(x){return {date:x.date,symbol:x.symbol,name:x.name,direction:x.direction,report:x.report,status:'nodata'};})
+        .sort(function(a,b){return a.date<b.date?1:-1;});
+      render({horizon_days:p.horizon_days,picks:rows,summary:{total:rows.length,open:0,closed:0},updated:new Date().toISOString()});
+      $meta.textContent='Live prices are temporarily unavailable. Showing the pick log only.';
+    }).catch(function(){ $meta.textContent='Could not load picks.'; });
+  }
+
+  function load(){
+    fetch('/api/track',{cache:'no-cache'}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(data){ if(!data.ok) throw 0; render(data); })
+      .catch(fallback);
+  }
+  load();
+  setInterval(load, 5*60*1000);
+})();
+</script>
+</body>
+</html>
