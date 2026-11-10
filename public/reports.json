@@ -2,53 +2,29 @@
  "reports": [
   {
    "date": "2026-11-10",
-   "headline": "Two qualifiers: Quantum (QMCO) +43% revenue and no debt; Venture Global (VG) +43% with raised EBITDA guide",
-   "summary": "Quantum beat estimates with revenue up 43% and adj. EBITDA up sharply, and has cleared its debt; the main caveat is a warrant-driven GAAP loss. Venture Global grew revenue 43% and raised its full-year EBITDA guide but carries ~$44.6B of debt. Digital Turbine grew 27% and raised its revenue guide but is down ~25% pre-market on margins, while October CPI came in hotter than expected.",
-   "html": "<h2>Finalists</h2>\n<div class=\"card\"><span class=\"tk\">QMCO</span> Quantum Corp &middot; pre-market ~$19.6&ndash;19.8 <span class=\"up\">+15&ndash;16%</span>\n<p><b>FQ2 2027 (Sep qtr):</b> revenue $89.6M, <b>+42.9% YoY</b> (est. $82.2M, beat). Non-GAAP EPS $0.25 vs $0.12 est. Gross margin 41.0% (+340 bp). Adj. EBITDA $11.1M vs $0.5M a year ago. No debt (term loan and $90M convert cleared since March); cash $67.5M; record backlog ~$100M.</p>\n<p><b>Guidance:</b> FQ3 revenue $91M &plusmn;$2M, adj. EPS $0.20 &plusmn;$0.10, adj. EBITDA $9.1M.</p>\n<p><b>Red flags:</b> GAAP net loss $44.8M ($-1.14/sh) from a $51.6M non-cash warrant fair-value charge, so warrants are a dilution overhang. The stock is not beaten down: it rallied hard after the August report and is now at the top of the price range. Option liquidity not checked.</p></div>\n<div class=\"card\"><span class=\"tk\">VG</span> Venture Global &middot; pre-market ~$12.44 <span class=\"up\">+5%</span>\n<p><b>Q3 2026:</b> revenue $4.76B, <b>+43% YoY</b>. Diluted EPS $0.96 vs $0.16. Consolidated adj. EBITDA $2.58B (+69%).</p>\n<p><b>Guidance:</b> FY26 adj. EBITDA <b>raised</b> to $10.0&ndash;10.3B (from $8.7&ndash;9.1B); cargo range 509&ndash;518.</p>\n<p><b>Red flags:</b> very heavy debt, about $44.6B total (up from ~$34.2B at year-end) to fund build-out. Earnings depend on LNG prices and fees. Analyst EPS estimate not verified.</p></div>\n<h2>Near-miss</h2>\n<div class=\"card\"><span class=\"tk\">APPS</span> Digital Turbine &middot; <span class=\"down\">~-25% pre-market</span>\n<p>Revenue $178.7M, +27% (beat $166.7M); GAAP EPS $0.06 (vs $-0.20 loss); adj. EPS $0.18 vs $0.16; adj. EBITDA +46%. FY27 revenue raised to $670&ndash;690M, but EBITDA guide held at $145&ndash;155M. Shares fell on disappointing margins. Also: ~$344M long-term debt, and a prior-quarter revision for understated revenue-share expense. Pre-market price not verified.</p></div>\n<h2>Reported but failed the screen</h2>\n<div class=\"tablewrap\"><table><tr><th>Ticker</th><th>Why it failed</th></tr>\n<tr><td>BTDR</td><td>Revenue +89%, but net loss $125.5M, cash fell to $214M, borrowings ~$1.95B, Q3 capex $478M</td></tr>\n<tr><td>GILT</td><td>Q3 revenue -1%; FY outlook revised (delays); non-GAAP EPS down on higher share count</td></tr>\n<tr><td>JBI</td><td>Revenue -2.8%, adj. EBITDA -22%, net loss, demand \"softer than anticipated\"</td></tr>\n<tr><td>RPAY</td><td>Revenue +97% is mostly acquisition-driven; organic growth guide cut to 5&ndash;6%</td></tr>\n<tr><td>PUBM</td><td>Beat (rev +17%, adj. EPS $0.25 vs $0.15) but growth under 20%</td></tr>\n<tr><td>DSP</td><td>Revenue +29% beat, but adj. EPS only in line; price/reaction not verified</td></tr>\n<tr><td>PAYS</td><td>Revenue +43%, but GAAP EPS missed and revenue guide only held</td></tr>\n<tr><td>SECZ</td><td>Up ~20&ndash;27% pre-market, but revenue +13% and big GAAP loss ($-0.41 vs $-0.03 est.)</td></tr>\n<tr><td>PLUG</td><td>~$1.57, still loss-making; near penny territory</td></tr>\n<tr><td>LTRX</td><td>Small beat, revenue only +9%</td></tr>\n</table></div>\n<h2>Larger movers &amp; macro</h2>\n<p>Up pre-market: SANM (+14&ndash;19%, revenue +84%), TTD (~+23% after hours), AAON (+15&ndash;18%, raised outlook), ONTO (+9% after hours). Down: RKLB (~-8%, wider loss), ONON (~-8%), QLYS (~-8% despite a raise), HIMS lower. TTWO +3.6% on GTA VI pre-orders.</p>\n<p>Macro: October CPI ran hot, +0.4% headline and +0.3% core (est. 0.3%/0.2%), which supports December Fed hike expectations. Nasdaq futures lagged after a report on Nvidia CEO Jensen Huang. Oil fell to its lowest since late August.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "headline": "No verified cheap, high-growth earnings qualifiers today; data was thin",
+   "summary": "Several sources were unreachable, so no cheap (<$20) name with 20%+ growth and raised guidance could be verified from the Nov 9 after-close and Nov 10 pre-open reporters. Kaltura, P3 Health, Harrow and Qualys were checked and fail on growth, guidance or price. Rocket Lab and Take-Two were the larger movers.",
+   "html": "<h2>No verified qualifiers today</h2>\n<p>I could not verify a single cheap (&lt;$20), 20%+ growth, guidance-raising reporter from the Nov 9 after-close / Nov 10 pre-open window. Several news and SEC pages were unreachable from the research environment, and pre-market prices were not retrievable. Nothing below is a pick; numbers shown are only those confirmed in press-release excerpts.</p>\n<h3>Near-misses / cheap names that reported</h3>\n<div class=\"card\"><span class=\"tk\">KLTR</span> Kaltura (reported Nov 9)\n<p>Revenue $47.3M (record), subscription $45.9M, adj. EBITDA $6.0M (+45% YoY), net loss $1.5M. Beat the high end of its own guidance and raised full-year revenue and EBITDA guidance for the third time in 2026. Fails the screen on growth: roughly 8% YoY by my own calculation (not company-reported). Stock was around $1.5-1.9 in recent months, so it is likely below the options-liquidity and market-cap thresholds. Pre-market reaction not found.</p></div>\n<div class=\"card\"><span class=\"tk\">PIII</span> P3 Health Partners (reported Nov 9)\n<p>Revenue $396M (+15%), adj. EBITDA $20.9M, raised midpoint of full-year adj. EBITDA guidance. Growth below 20%; credit and profitability risk typical of the name. Price and reaction not verified.</p></div>\n<div class=\"card\"><span class=\"tk\">HROW</span> Harrow (reported Nov 9)\n<p>Record revenue $99.3M (+39% YoY), adj. EBITDA $21.2M, but full-year adj. EBITDA guidance was cut to over $40M from $80-100M. Guidance cut plus price not verified as under $20, so it fails.</p></div>\n<div class=\"card\"><span class=\"tk\">QLYS</span> Qualys (reported Nov 9)\n<p>Revenue +11%, raised 2026 revenue guidance to $736.9-738.9M. Growth too slow and the stock is well above $20 on a typical basis (price not verified).</p></div>\n<h3>Larger notable movers</h3>\n<p>Rocket Lab (RKLB): revenue +72.7% to $267.8M, Q4 guide ~$280M midpoint above consensus, but a wider loss; shares fell roughly 4-7% after hours. Take-Two (TTWO): record GTA VI preorders and reaffirmed outlook, up about 4% despite soft bookings. Sanmina, Hims &amp; Hers and Securitize were listed among early movers by CNBC, but the page could not be read, so no figures are given.</p>\n<p>Note: BlackSky (Nov 5, revenue +118%) and Grab (Nov 3, revenue +27%, guidance raised) had strong prints but reported before this window.</p>\n<p>Macro: most recent futures data I could confirm is from Nov 6 (S&amp;P futures near 7,400, crude near $100). No Nov 10 pre-market macro read was found.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
    "sources": [
     {
-     "title": "Quantum FQ2 2027 press release (SEC 8-K)",
-     "url": "https://www.sec.gov/Archives/edgar/data/0000709283/000162828026072188/fy27q2ex991pressrelease.htm"
+     "title": "Kaltura Q3 2026 8-K",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001432133/000162828026072135/kaltura-q3x2026earningsrel.htm"
     },
     {
-     "title": "Venture Global Q3 2026 release (SEC 8-K)",
-     "url": "https://www.sec.gov/Archives/edgar/data/0002007855/000200785526000091/vgincq32026earningsrelease.htm"
+     "title": "Harrow Q3 2026 release",
+     "url": "https://www.globenewswire.com/news-release/2026/11/09/3398928/0/en/harrow-announces-third-quarter-2026-financial-results.html"
     },
     {
-     "title": "Digital Turbine FQ2 2027 release (SEC 8-K)",
-     "url": "https://www.sec.gov/Archives/edgar/data/0000317788/000162828026072130/form8-kxexhibit991q2fy2027.htm"
+     "title": "P3 Health Partners Q3 2026 8-K",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001832511/000183251126000045/piii-20261109xexx991.htm"
     },
     {
-     "title": "Digital Turbine falls 25% in premarket on disappointing margins (Seeking Alpha)",
-     "url": "https://seekingalpha.com/news/4669703-digital-turbine-falls-25-in-premarket-on-disappointing-margins"
+     "title": "Qualys Q3 2026 results",
+     "url": "https://www.prnewswire.com/news-releases/qualys-announces-third-quarter-2026-financial-results-302933782.html"
     },
     {
-     "title": "After-Hours Technology Earnings, Nov 9, 2026",
-     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-monday"
-    },
-    {
-     "title": "Bitdeer Q3 2026 results",
-     "url": "https://ir.bitdeer.com/news-releases/news-release-details/bitdeer-reports-unaudited-third-quarter-2026-results-record"
-    },
-    {
-     "title": "Gilat Q3 2026 results",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399345/11105/en/gilat-reports-third-quarter-2026-results.html"
-    },
-    {
-     "title": "Janus International Q3 2026 results (TipRanks)",
-     "url": "https://www.tipranks.com/news/company-announcements/janus-international-reports-third-quarter-2026-financial-results"
-    },
-    {
-     "title": "Premarket movers (StockSetups)",
-     "url": "https://stocksetups.com/movers/premarket"
-    },
-    {
-     "title": "Stock Market Today, Nov 10, 2026 (TheStreet)",
-     "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
-    },
-    {
-     "title": "October 2026 CPI report (StockTitan)",
-     "url": "https://www.stocktitan.net/articles/october-2026-cpi-inflation-report"
+     "title": "TipRanks: Rocket Lab falls after hours as Take-Two surges",
+     "url": "https://www.tipranks.com/news/why-rocket-lab-stock-is-falling-after-hours-as-take-two-surges-and-what-wall-street-sees-next"
     }
    ]
   },
