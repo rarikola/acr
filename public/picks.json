@@ -21,6 +21,16 @@
    "premarket_ref": 12.44,
    "report": "/#/2026-11-10",
    "note": "Q3 revenue +43% YoY, FY26 adj. EBITDA guide raised to $10.0–10.3B"
+  },
+  {
+   "id": "2026-11-11-RSKD",
+   "date": "2026-11-11",
+   "symbol": "RSKD",
+   "name": "Riskified",
+   "direction": "long",
+   "premarket_ref": null,
+   "report": "/#/2026-11-11",
+   "note": "Q3 revenue +41% YoY (accelerating), FY26 revenue guide raised to $427–433M, no debt"
   }
  ]
 }
