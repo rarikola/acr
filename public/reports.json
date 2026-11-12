@@ -1,6 +1,58 @@
 {
  "reports": [
   {
+   "date": "2026-11-12",
+   "headline": "AEVEX (AVEX) is the lone finalist: revenue +56% with a big guidance raise from a beaten-down price; Intuitive Machines was a near-miss on acquisition-driven growth.",
+   "summary": "AEVEX grew Q3 revenue 56.5% (mostly organic), lifted adj. EBITDA 73% and raised FY26 revenue guidance to $820–840M, with shares near the bottom of a $8.95–$42.34 range. Intuitive Machines beat and turned free cash flow positive but its growth is acquisition-driven; Ondas and Paysafe failed. Nvidia sank after hours on a report the board may remove Jensen Huang.",
+   "html": "<h2>Finalists</h2>\n<div class=\"card\"><span class=\"tk\">AVEX</span> <b>AEVEX Corp</b> — Q3 2026 (reported after the close Nov 11) · after hours <span class=\"up\">~+10% to +11%</span> (pre-market price not verified; last verified close $11.56 on Nov 9)\n<div class=\"tablewrap\"><table>\n<tr><th>Metric</th><th>Q3 2026</th><th>Q3 2025</th></tr>\n<tr><td>Revenue</td><td>$189.7M (+56.5% YoY)</td><td>$121.2M</td></tr>\n<tr><td>Airborne Systems</td><td>$147.8M (+67.1%)</td><td>—</td></tr>\n<tr><td>Global Solutions</td><td>$27.5M (−10.7%)</td><td>—</td></tr>\n<tr><td>Maritime (acquired BlackSea, Sept 8)</td><td>$12.4M</td><td>—</td></tr>\n<tr><td>Adj. EBITDA / margin</td><td>$30.8M / 16.2%</td><td>$17.8M / 14.6%</td></tr>\n<tr><td>Per-share result</td><td>$(0.40) loss (GAAP vs adjusted not specified in source)</td><td>—</td></tr>\n</table></div>\n<p><b>Guidance:</b> FY26 revenue raised to $820–840M (from $700–720M; midpoint above ~$755M consensus); adj. EBITDA raised to $128–132M (from $105–111.5M).</p>\n<p><b>Why it qualifies:</b> growth is mostly organic (ex-Maritime acquisition, revenue still up ~46%), EBITDA up 73% with margin expansion, and a large guidance raise. Stock was beaten down beforehand: 52-week range $8.95–$42.34, ~$11.56 on Nov 9.</p>\n<p><b>Red flags:</b> still loss-making per share; cash, debt and cash flow not verified (release page failed to load); Global Solutions shrinking and Ukraine-related revenue fading; recent IPO with a volatile chart; EPS consensus not verified.</p></div>\n\n<h2>Near-misses</h2>\n<div class=\"card\"><span class=\"tk\">LUNR</span> <b>Intuitive Machines</b> — Q3 2026 (pre-market Nov 12) · pre-market <span class=\"up\">~+11%</span> (prior close $12.18)\n<p>Revenue $269.3M (+414% YoY) vs ~$246M consensus; EPS $(0.02) vs $(0.10) expected; adj. EBITDA +$8.3M vs $(13.2)M; Q3 free cash flow +$33M; record backlog $1.9B. FY26 revenue guide $920–950M (earlier guidance cited as $900M–$1B, so the range narrowed rather than clearly rising).</p>\n<p><b>Why not a finalist:</b> growth is driven mainly by the Lanteris acquisition (organic split not disclosed); ~$337M long-term debt; ~$512M of equity raised YTD (dilution); 9-month FCF still −$112M; one-off legal ($10.3M) and deal costs in EBITDA.</p></div>\n\n<h2>Failed the screen</h2>\n<div class=\"card\"><span class=\"tk\">ONDS</span> <b>Ondas</b> — revenue $167.5M (16x YoY, 64% pro forma organic) beat ~$148M; FY26 guide raised to ≥$550M. Failed: adj. EBITDA −$59.7M, GAAP gross margin fell to 21.8% from 43.1%, shares outstanding +55% this year. Pre-market <span class=\"down\">~−4%</span> (~$5.73 reference).</div>\n<div class=\"card\"><span class=\"tk\">PSFE</span> <b>Paysafe</b> — missed EPS by $0.11 and revenue estimates, weak guidance; stock <span class=\"down\">~−30%</span>.</div>\n<p>Other reports in the window were outside the price filter or mixed: Corteva (CTVA) <span class=\"down\">−8%</span> AH on revenue miss and outlook cut; Tetra Tech (TTEK) <span class=\"up\">+8%</span> AH, backlog $4.67B; Digi International (DGII) <span class=\"down\">−15%</span> AH despite record revenue; Nebius (NBIS), Brookfield (BN) and Siemens also reported pre-market.</p>\n\n<h2>Market backdrop</h2>\n<p>Nvidia fell ~8.6% after hours on a WSJ report that its board is preparing to remove CEO Jensen Huang (no company response); Nasdaq futures were down ~0.8%. AMD and Broadcom were higher pre-market. Wednesday closed strong (S&amp;P +1.3%, Nasdaq +1.6%; CoreWeave +25% on its beat). Markets price ~90% odds of a December Fed hike after the hot October CPI. Cisco, Applied Materials and Cerebras report after today's close.</p>\n<p class=\"note\">Pre-market data was thin today: several recap pages (Benzinga, Chartmill, CNBC) failed to load, and verified pre-market prices for AVEX and LUNR were not available.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Investing.com — AEVEX shares soar 10% on raised full-year guidance",
+     "url": "https://www.investing.com/news/earnings/aevex-shares-soar-10-on-raised-fullyear-guidance-5019948"
+    },
+    {
+     "title": "AAII — Why AEVEX Corp.'s (AVEX) stock is up 10.64%",
+     "url": "https://www.aaii.com/investingideas/article/555979-why-aevex-corp8217s-avex-stock-is-up-1064"
+    },
+    {
+     "title": "Intuitive Machines Q3 2026 results",
+     "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-reports-third-quarter-2026-financial-results"
+    },
+    {
+     "title": "GuruFocus — LUNR shares surge 11% premarket",
+     "url": "https://www.gurufocus.com/news/9194622/intuitive-machines-lunr-shares-surge-11-premarket-on-strong-q3-revenue-beat"
+    },
+    {
+     "title": "TipRanks — LUNR Q3 preview (consensus)",
+     "url": "https://www.tipranks.com/news/intuitive-machines-q3-earnings-today-wall-street-and-options-markets-last-minute-verdict-on-lunr-stock"
+    },
+    {
+     "title": "Ondas Q3 2026 results",
+     "url": "https://ir.ondas.com/press-releases/detail/341/ondas-posts-record-q3-2026-revenue-of-167-5-million-on"
+    },
+    {
+     "title": "GuruFocus — ONDS slips premarket",
+     "url": "https://www.gurufocus.com/news/9194619/ondas-onds-shares-slip-premarket-despite-record-q3-revenue-beat"
+    },
+    {
+     "title": "Investing.com — Paysafe tumbles 30%",
+     "url": "https://www.investing.com/news/earnings/paysafe-tumbles-30-on-earnings-miss-and-weak-guidance-5021409"
+    },
+    {
+     "title": "StockTitan — Stock market today, Nov 11, 2026",
+     "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-11-2026"
+    },
+    {
+     "title": "Yahoo/Zacks — Stock Market News for Nov 12, 2026",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-nov-12-071100866.html"
+    },
+    {
+     "title": "TipRanks — Stocks reporting earnings today, Nov 12",
+     "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-12-2026"
+    }
+   ]
+  },
+  {
    "date": "2026-11-11",
    "headline": "Riskified (RSKD) is the lone finalist: revenue growth accelerated to 41% with a third guidance raise; Gevo and Satellogic were near-misses.",
    "summary": "Riskified posted Q3 revenue of $115.2M (+41% YoY, organic), record free cash flow, zero debt, and raised FY26 revenue guidance to $427–433M; shares were up roughly 20–25% pre-market. Gevo (+94% revenue, big EBITDA beat) and Satellogic (+342% revenue, first positive adj. EBITDA) missed the cut on non-recurring revenue, debt, cash burn and dilution. Futures rose after Tuesday's CPI-driven selloff.",
