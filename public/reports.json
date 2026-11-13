@@ -1,6 +1,54 @@
 {
  "reports": [
   {
+   "date": "2026-11-13",
+   "headline": "One qualifier: Liftoff Mobile (LFTO) beat and raised with 32% growth; Accelevation (ACCV) a near-miss on margins.",
+   "summary": "Liftoff Mobile grew revenue 32%, swung to a large GAAP profit, beat its own guide and lifted its full-year outlook, sending shares up about 15% after hours from near their lows. Accelevation grew 66% with strong cash flow but margins and GAAP profit fell. Nu, dLocal and StoneCo failed on misses or weak guidance; macro is dominated by Nvidia's CEO exit and Fed hike pricing.",
+   "html": "<h2>Finalists</h2>\n<div class=\"card\"><p><span class=\"tk\">LFTO</span> Liftoff Mobile — closed $18.71 Thu; after hours $21.52 <span class=\"up\">+15%</span> (verified pre-market quote not found; now slightly above the $20 line)</p>\n<ul><li>Q3 revenue $237.5M, <b>+32% YoY</b> (core advertising +33%); beat the top of its own guide by ~$16M.</li>\n<li>GAAP net income $86.7M, diluted EPS $0.47 vs a loss a year ago; adj. EBITDA $144.9M (+45%), 61% margin (56% a year ago).</li>\n<li>Guidance up: Q4 revenue $244–249M; FY26 revenue $907–912M vs ~$879M FactSet consensus; FY adj. EBITDA $547–551M.</li>\n<li>Cash flow: TTM FCF $249M (+158%); cash $385.7M.</li>\n<li>Setup: stock was near the low end of its $13.96–$30.10 52-week range before the print.</li></ul>\n<p class=\"note\">Red flags: ~$1.4B debt (net leverage 2.1x, down from 2.4x); Q3 GAAP profit helped by a $14.4M contingent-consideration gain; share count up ~38% this year from the IPO; organic vs acquired growth not split out.</p></div>\n<h2>Near-misses</h2>\n<div class=\"card\"><p><span class=\"tk\">ACCV</span> Accelevation Holdings — $12.21 close Thu (first report since its Sept IPO)</p>\n<ul><li>Revenue $202.2M, +65.9% YoY; bookings growth over 350%; FY26 guide revenue $905–915M, adj. EBITDA $155–165M.</li>\n<li>Strong cash: Q3 operating cash flow $62.5M, FCF $55.0M.</li></ul>\n<p class=\"note\">Why not a finalist: GAAP net income fell 77% to $3.2M; adj. EBITDA margin fell to 18.7% from 23.7%; interest expense nearly tripled; $655M debt at quarter end (partly repaid with IPO cash); acquisition contribution not disclosed; no prior guidance to judge a raise; pre-market reaction not verified.</p></div>\n<h2>Reported but failed the screen</h2>\n<div class=\"tablewrap\"><table><tr><th>Ticker</th><th>Why it failed</th></tr>\n<tr><td>NU</td><td>~$12.20 pre-market (+3%); record profit but missed on revenue ($5.82B vs $5.91B) and adj. EPS ($0.22 vs $0.23).</td></tr>\n<tr><td>DLO</td><td>Revenue +41% but missed ($398.0M vs $409.2M est.); outlook only reaffirmed; reaction not verified.</td></tr>\n<tr><td>STNE</td><td>Revenue +3%; cut 2026 EPS outlook and withdrew 2027 targets.</td></tr>\n<tr><td>Fluent</td><td>Up ~20% pre-market, but revenue growth only +14% and still loss-making.</td></tr>\n<tr><td>Newsmax</td><td>Up ~15% pre-market; profit leaned on a $14M one-time payment.</td></tr>\n<tr><td>CBRS</td><td>Raised guide, Microsoft deal, up 11–17% pre-market; but GAAP revenue missed, deep losses, not a cheap stock.</td></tr>\n<tr><td>VTSI, WYY</td><td>Strong revenue beats (+42%, +27%) but micro-caps likely below the size/options-liquidity bar; market caps not verified.</td></tr>\n<tr><td>KSCP</td><td>Revenue up ~177% but going-concern warning.</td></tr></table></div>\n<h2>Bigger movers and macro</h2>\n<p>Cisco: revenue +24% and raised FY guide, yet down 2–3% pre-market on gross-margin slippage (65.6% vs 68.1%). Applied Materials: revenue +53% beat. Modine +31–38% on a report that Samsung is in talks to buy it. Nvidia rebounding ~2% after Jensen Huang resigned as CEO Thursday (CFO Colette Kress interim). October PPI +0.3% m/m (vs +0.4% est.), +6.5% y/y; markets are pricing a December Fed hike; the 10-year is back above 5%. Microsoft down ~1.4% on a global Microsoft 365 outage. Russell 2000 weak early.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Liftoff Mobile Q3 2026 earnings release (SEC 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001850351/000162828026073379/fy26q3earningsrelease.htm"
+    },
+    {
+     "title": "Liftoff Q3 2026 call / after-hours move (Investing.com)",
+     "url": "https://in.investing.com/news/stock-market-news/earnings-call-transcript-liftoff-tops-q3-2026-guidance-shares-jump-15-after-hours-93CH-5701367"
+    },
+    {
+     "title": "Liftoff FY26 guide vs FactSet (MarketScreener)",
+     "url": "https://www.marketscreener.com/news/lfto-liftoff-mobile-expects-fiscal-2026-revenue-range-907m-912m-vs-factset-est-of-879-1m-ce785ed9d98af423"
+    },
+    {
+     "title": "Accelevation Q3 2026 earnings release (SEC 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0002141406/000162828026073382/a3q2026earningsrelease.htm"
+    },
+    {
+     "title": "Accelevation overview (Stock Titan)",
+     "url": "https://www.stocktitan.net/overview/ACCV/"
+    },
+    {
+     "title": "After-hours tech earnings, Nov 12 (Substack)",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-thursday"
+    },
+    {
+     "title": "Premarket movers (Yahoo Finance)",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-modine-surges-cerebras-122705039.html"
+    },
+    {
+     "title": "Stock market today Nov 13 (TheStreet)",
+     "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026"
+    },
+    {
+     "title": "Closing Look Nov 12 (Cappnotes)",
+     "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-12"
+    },
+    {
+     "title": "Implied earnings moves Nov 13 (TipRanks)",
+     "url": "https://www.tipranks.com/news/options-volatility-and-implied-earnings-moves-today-november-13-2026"
+    }
+   ]
+  },
+  {
    "date": "2026-11-12",
    "headline": "AEVEX (AVEX) is the lone finalist: revenue +56% with a big guidance raise from a beaten-down price; Intuitive Machines was a near-miss on acquisition-driven growth.",
    "summary": "AEVEX grew Q3 revenue 56.5% (mostly organic), lifted adj. EBITDA 73% and raised FY26 revenue guidance to $820–840M, with shares near the bottom of a $8.95–$42.34 range. Intuitive Machines beat and turned free cash flow positive but its growth is acquisition-driven; Ondas and Paysafe failed. Nvidia sank after hours on a report the board may remove Jensen Huang.",
