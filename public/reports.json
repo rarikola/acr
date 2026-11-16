@@ -1,6 +1,46 @@
 {
  "reports": [
   {
+   "date": "2026-11-16",
+   "headline": "No qualifiers: Monday's cheap reporters lacked growth plus profits",
+   "summary": "None of the sub-$20 names reporting Friday after the close or Monday before the open met the screen. NIU and IQ showed flat-to-shrinking revenue, XPEV grew 19% but its loss widened, and POET's revenue is still tiny. Futures were mixed with Nasdaq weak ahead of Nvidia's Tuesday report.",
+   "html": "<h2>Finalists</h2>\n<p>None today. Monday's pre-open and Friday's after-close reporters under ~$20 did not combine 20%+ growth with profitability and a beat. Data was thin: several premarket-mover pages failed to load and no verified pre-market prices were available.</p>\n<h2>Reported but failed</h2>\n<div class=\"card\"><span class=\"tk\">NIU</span> Niu Technologies: revenue +1.2% YoY to RMB1.71B; swung to a net loss (RMB34M) from a RMB81.7M profit; gross margin 18.0% vs 21.8%. Market cap ~$133M, below the size cut. International units +226% is the bright spot.</div>\n<div class=\"card\"><span class=\"tk\">IQ</span> iQIYI: revenue −10% YoY to RMB6.01B. Non-GAAP operating income turned positive (RMB25M) and free cash flow was RMB123M, but revenue is shrinking.</div>\n<div class=\"card\"><span class=\"tk\">POET</span> POET Technologies: revenue ~$1.0M (from $0.3M) on a Q3 operating loss of ~$18.8M; the cash pile (~$774M incl. short-term investments) is the story, not earnings.</div>\n<div class=\"card\"><span class=\"tk\">XPEV</span> XPeng: revenue +19.1% YoY to RMB24.3B and Q4 revenue guided +37–43% YoY, but net loss widened to RMB0.87B (from RMB0.38B) and gross margin slipped to 18.9% from 20.1%. Fails the profitability test.</div>\n<div class=\"card\"><span class=\"tk\">XMAX</span> XMax (Fri after close): revenue −34% to $6.4M; net loss $9.0M vs $1.1M.</div>\n<div class=\"card\"><span class=\"tk\">OPTX</span> / <span class=\"tk\">FIEE</span> Syntec Optics (+22.9% revenue, $8.5M, EPS $0.01) and FiEE (+35% revenue, $2.6M) are too small (sub-$10M quarterly revenue, no consensus or options liquidity verified).</div>\n<div class=\"card\"><span class=\"tk\">BLDP</span> Ballard Power: listed as a pre-open reporter; Q3 2026 numbers could not be verified this morning (only year-old coverage loaded). Historically loss-making.</div>\n<h2>Market backdrop</h2>\n<p>Futures mixed early (Nasdaq 100 about −0.9%, S&amp;P about −0.3%, Dow flat) ahead of Nvidia's results Tuesday after the close; NVDA about −3.5% and INTC about −5% (class action filed Friday) pre-market. JNJ about +1% on a reported Ollin Biosciences deal. Large pre-open reporters: Baidu, Tyson Foods, XPeng. Fed's Warsh speaks this week.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "TipRanks: Stocks reporting earnings today (Nov 16)",
+     "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-16-2026"
+    },
+    {
+     "title": "TipRanks: Options implied earnings moves (Nov 16)",
+     "url": "https://www.tipranks.com/news/options-volatility-and-implied-earnings-moves-today-november-16-2026"
+    },
+    {
+     "title": "Niu Technologies Q3 2026 results (TipRanks)",
+     "url": "https://www.tipranks.com/news/company-announcements/niu-technologies-announces-unaudited-third-quarter-2026-results"
+    },
+    {
+     "title": "iQIYI Q3 2026 results (TipRanks)",
+     "url": "https://www.tipranks.com/news/company-announcements/iqiyi-reports-third-quarter-2026-results-non-gaap-operating-income"
+    },
+    {
+     "title": "POET Technologies Q3 2026 results (TipRanks)",
+     "url": "https://www.tipranks.com/news/company-announcements/poet-technologies-announces-third-quarter-2026-financial-results"
+    },
+    {
+     "title": "XPeng Q3 2026 results (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001810997/000119312526461897/d182197dex991.htm"
+    },
+    {
+     "title": "After-hours technology earnings, Fri Nov 13",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-friday"
+    },
+    {
+     "title": "Investing.com: Premarket movers Nov 16",
+     "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-intel-fall-jj-gains-5029397"
+    }
+   ]
+  },
+  {
    "date": "2026-11-13",
    "headline": "One qualifier: Liftoff Mobile (LFTO) beat and raised with 32% growth; Accelevation (ACCV) a near-miss on margins.",
    "summary": "Liftoff Mobile grew revenue 32%, swung to a large GAAP profit, beat its own guide and lifted its full-year outlook, sending shares up about 15% after hours from near their lows. Accelevation grew 66% with strong cash flow but margins and GAAP profit fell. Nu, dLocal and StoneCo failed on misses or weak guidance; macro is dominated by Nvidia's CEO exit and Fed hike pricing.",
