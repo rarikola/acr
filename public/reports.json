@@ -1,6 +1,50 @@
 {
  "reports": [
   {
+   "date": "2026-11-17",
+   "headline": "No qualifiers: Agora (API) is the closest, with 19% growth and profits, but its guide slows",
+   "summary": "Monday's after-close and Tuesday's pre-open reports produced no cheap stock with 20%+ growth, profits and a clean beat. Agora came closest: revenue up 19%, eighth straight profitable quarter, $363M in cash, but a slowing Q4 guide and lower margins. Red Cat fell sharply on a large revenue miss; futures were lower ahead of Nvidia.",
+   "html": "<h2>Finalists</h2>\n<p>No qualifiers today. Monday's after-close and Tuesday's pre-open slate had few cheap names with 20%+ growth, profits and a beat at the same time.</p>\n<h2>Closest near-miss</h2>\n<div class=\"card\"><span class=\"tk\">API</span> <b>Agora</b> (Q3 2026, reported Mon after close)<br>\nRevenue $42.1M, <span class=\"up\">+19% YoY</span>, the third straight quarter of faster growth. GAAP net income $3.0M (eighth profitable quarter in a row); operating cash flow $2.2M; about $363M in cash and deposits; no debt. Dollar-based net retention 110% (was 97%).<br>\n<b>Why it misses:</b> Q4 guide of $44–45M implies a slowdown to 15–18% growth. Gross margin fell to 63.4% from 66.0%. It still had a $1.5M operating loss, so the profit comes from interest and investment income. No consensus figure or pre-market price could be verified, and its options trade thinly.</div>\n<h2>Reported but failed</h2>\n<div class=\"tablewrap\"><table><tr><th>Ticker</th><th>Why it failed</th></tr>\n<tr><td>RCAT</td><td>Revenue $11.8M (+22%) but far below the ~$42M expected; wider loss; pulled FY26 revenue target. <span class=\"down\">~-26% pre-market</span></td></tr>\n<tr><td>KLAR</td><td>Revenue $1,009M only +12%; net loss $(65)M (narrower); FY outlook kept. Growth too slow; price not verified</td></tr>\n<tr><td>WB</td><td>Revenue $410M, -7%; net income down to $24.5M from $221M (~$6 stock)</td></tr>\n<tr><td>HUYA</td><td>Revenue missed; shares near 3-year lows</td></tr>\n<tr><td>STEM</td><td>Revenue miss; cut FY26 revenue outlook to $132–142M from $140–190M</td></tr>\n<tr><td>PAGS</td><td>Revenue -0.4% YoY; no guidance update</td></tr>\n<tr><td>XP</td><td>Net revenue +9%, net income +4%: solid but too slow</td></tr>\n<tr><td>GPRO</td><td>Revenue -41%; loss</td></tr>\n<tr><td>INFQ, SHAZ, DUOT, SLNH, CSAI</td><td>Revenue misses and losses</td></tr>\n</table></div>\n<h2>Larger names and macro</h2>\n<p>Home Depot revenue $43.4B beat the $42.8B estimate and it guided to the top of its range; it named CFO Richard McPhail as CEO (<span class=\"down\">~-0.9%</span>). JD.com missed on revenue and adjusted profit (<span class=\"down\">~-3.4%</span>). Tencent Music missed on revenue but beat on EPS (<span class=\"down\">~-3.1%</span>). Futures fell about 0.3–0.45% ahead of Nvidia's results after the close, with new limits on chip sales to China in focus.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Agora Q3 2026 results (press release)",
+     "url": "https://investor.agora.io/news-releases/news-release-details/agora-inc-reports-third-quarter-2026-financial-results"
+    },
+    {
+     "title": "Klarna Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0002003292/000162828026074361/exhibitno991pressrelease.htm"
+    },
+    {
+     "title": "XP Inc Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001787425/000095010326017561/dp256943_ex9901.htm"
+    },
+    {
+     "title": "Weibo Q3 2026 (GuruFocus)",
+     "url": "https://www.gurufocus.com/news/9204468/weibo-wb-reports-q3-2026-financial-results-with-declining-revenue"
+    },
+    {
+     "title": "Huya Q3 2026 (GuruFocus)",
+     "url": "https://www.gurufocus.com/news/9204435/huya-huya-reports-q3-results-with-revenue-miss-shares-trade-near-3year-lows"
+    },
+    {
+     "title": "Premarket movers Nov 17 (Investing.com)",
+     "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-red-cat-fall-home-depot-spacex-gains-5032425"
+    },
+    {
+     "title": "After-hours tech earnings Nov 16 (Substack)",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-monday-c9f"
+    },
+    {
+     "title": "Earnings calendar week of Nov 16 (StockTitan)",
+     "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-16-2026"
+    },
+    {
+     "title": "Implied earnings moves Nov 17 (TipRanks)",
+     "url": "https://www.tipranks.com/news/options-volatility-and-implied-earnings-moves-today-november-17-2026"
+    }
+   ]
+  },
+  {
    "date": "2026-11-16",
    "headline": "No qualifiers: Monday's cheap reporters lacked growth plus profits",
    "summary": "None of the sub-$20 names reporting Friday after the close or Monday before the open met the screen. NIU and IQ showed flat-to-shrinking revenue, XPEV grew 19% but its loss widened, and POET's revenue is still tiny. Futures were mixed with Nasdaq weak ahead of Nvidia's Tuesday report.",
