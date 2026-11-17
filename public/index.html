@@ -62,6 +62,19 @@ aside li a:hover{background:var(--surface);border-color:var(--line)}
 aside li a.active{background:var(--surface);border-color:var(--line);box-shadow:inset 3px 0 0 var(--accent)}
 aside li small{display:block;color:var(--muted);font-size:.8rem;line-height:1.35;margin-top:2px}
 .about{font-size:.88rem;color:var(--muted)}
+.cal{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 10px 12px;margin:0 0 28px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;font-size:.9rem;font-weight:600}
+.cal-head button{background:none;border:1px solid transparent;border-radius:6px;color:var(--muted);font:inherit;font-size:1.1rem;line-height:1;padding:4px 9px;cursor:pointer}
+.cal-head button:hover:not(:disabled){border-color:var(--line);color:var(--ink)}
+.cal-head button:disabled{opacity:.3;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:.8rem}
+.cal-grid .dow{color:var(--muted);font-size:.7rem;text-transform:uppercase;padding:2px 0 4px}
+.cal-grid span,.cal-grid a{display:block;padding:5px 0;border-radius:5px;font-variant-numeric:tabular-nums}
+.cal-grid span.day{color:var(--muted);opacity:.55}
+.cal-grid a{text-decoration:none;font-weight:600;color:var(--brand);background:var(--bg);border:1px solid var(--line)}
+.cal-grid a:hover{border-color:var(--accent)}
+.cal-grid a.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.cal-note{font-size:.76rem;color:var(--muted);margin-top:8px}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
 footer .wrap{padding-top:22px;padding-bottom:30px}
 .empty{color:var(--muted)}
@@ -84,6 +97,8 @@ footer .wrap{padding-top:22px;padding-bottom:30px}
     <aside>
       <h4>Archive</h4>
       <ol id="archive"></ol>
+      <h4>Calendar</h4>
+      <div class="cal" id="cal"></div>
       <div class="about">
         <h4>Method</h4>
         Each trading morning we review companies that reported since the prior session, focusing on shares under ~$20 with liquid options, and keep only those showing roughly 20%+ revenue growth, profitability or improving margins, and strong guidance.
@@ -114,8 +129,38 @@ footer .wrap{padding-top:22px;padding-bottom:30px}
   }
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
+  var RECENT = 7, calMonth = null, calActive = null, $c = document.getElementById('cal');
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function pad(n){return (n<10?'0':'')+n;}
+  function ym(d){return d.slice(0,7);}
+
+  function renderCal(){
+    var archived = reports.slice(RECENT);
+    if(!archived.length){ $c.innerHTML='<p class="cal-note" style="margin:0">Reports older than the latest '+RECENT+' will appear here.</p>'; return; }
+    var have = {}; archived.forEach(function(r){have[r.date]=r;});
+    var months = archived.map(function(r){return ym(r.date);}).filter(function(m,i,a){return a.indexOf(m)===i;}).sort();
+    if(!calMonth || months.indexOf(calMonth)<0) calMonth = months[months.length-1];
+    var i = months.indexOf(calMonth), y = +calMonth.slice(0,4), m = +calMonth.slice(5,7)-1;
+    var first = new Date(y,m,1).getDay(), days = new Date(y,m+1,0).getDate();
+    var h = '<div class="cal-head"><button type="button" data-step="-1" aria-label="Earlier month"'+(i<=0?' disabled':'')+'>&lsaquo;</button>'+
+      '<span>'+MONTHS[m]+' '+y+'</span><button type="button" data-step="1" aria-label="Later month"'+(i>=months.length-1?' disabled':'')+'>&rsaquo;</button></div><div class="cal-grid">';
+    ['Su','Mo','Tu','We','Th','Fr','Sa'].forEach(function(d){h+='<span class="dow">'+d+'</span>';});
+    for(var k=0;k<first;k++) h+='<span></span>';
+    for(var d=1; d<=days; d++){
+      var key = y+'-'+pad(m+1)+'-'+pad(d), r = have[key];
+      h += r ? '<a href="#/'+key+'" title="'+esc(r.headline||'')+'"'+(key===calActive?' class="active"':'')+'>'+d+'</a>' : '<span class="day">'+d+'</span>';
+    }
+    $c.innerHTML = h+'</div><div class="cal-note">'+archived.length+' archived report'+(archived.length===1?'':'s')+'. Highlighted days open the report.</div>';
+    Array.prototype.forEach.call($c.querySelectorAll('button[data-step]'), function(b){
+      b.onclick = function(){ var j=i+(+b.getAttribute('data-step')); if(months[j]){calMonth=months[j]; renderCal();} };
+    });
+  }
+
   function renderArchive(active){
-    $a.innerHTML = reports.map(function(r){
+    calActive = active;
+    if(active && reports.slice(RECENT).some(function(r){return r.date===active;})) calMonth = ym(active);
+    renderCal();
+    $a.innerHTML = reports.slice(0, RECENT).map(function(r){
       return '<li><a href="#/'+r.date+'"'+(r.date===active?' class="active"':'')+'>'+shortDate(r.date)+
              '<small>'+esc(r.headline||'')+'</small></a></li>';
     }).join('') || '<li class="empty">No reports yet.</li>';
