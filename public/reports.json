@@ -1,6 +1,54 @@
 {
  "reports": [
   {
+   "date": "2026-11-18",
+   "headline": "No qualifiers: fast growers PONY and JMIA still unprofitable; ZIM's blowout is pinned by a $35 Hapag-Lloyd deal",
+   "summary": "No cheap reporter cleared every filter this morning. Pony AI (+75% revenue) and Jumia (+33%) grew fast but are still losing money, Prenetics is under $300M market cap, and ZIM's strong quarter and raised guidance are capped by its pending $35/share cash takeover. Nvidia's beat is lifting tech futures as the Fed leans hawkish.",
+   "html": "<h2>Finalists</h2>\n<p>No qualifiers today. Several cheap names posted fast growth but were still losing money, were too small, or are pinned by a takeover deal.</p>\n<h2>Near misses</h2>\n<div class=\"card\"><span class=\"tk\">PONY</span> Pony AI — Q3 revenue $44.6M, <span class=\"up\">+75%</span> YoY (robotaxi +165%, robotruck +76%). Non-GAAP net loss narrowed to $48.9M from $56.8M, but the GAAP net loss widened to $136.3M because of a $77.0M fair-value loss on securities. Gross margin was 17.8% (18.4% a year ago) and free cash flow was -$78M. About $1.15B in cash and investments, with no borrowings shown. No financial guidance; it targets 3,500 robotaxis by year-end. Fails the profitability test. No consensus or pre-market data verified.</div>\n<div class=\"card\"><span class=\"tk\">JMIA</span> Jumia — Q3 revenue $60.7M, <span class=\"up\">+33%</span>. Gross profit was +29%, and the adjusted EBITDA loss narrowed 43% to $7.9M. GMV grew only 14%, and the call reportedly cut GMV guidance. It raised $50M of equity in August. Still loss-making; on Benzinga's list of Wednesday pre-market decliners (exact move not verified).</div>\n<div class=\"card\"><span class=\"tk\">ZIM</span> ZIM Integrated — strong quarter: revenue $2.71B (<span class=\"up\">+53%</span>), net income $830M (EPS $6.88), adjusted EBITDA $1.33B, free cash flow $1.23B. FY26 adj. EBITDA guidance raised to $3.3–3.5B (from $2.7–3.0B). Net income includes a $197M impairment reversal (a one-time gain). Excluded because Hapag-Lloyd has agreed to buy ZIM for $35.00 cash per share (target close Q1 2027, Israeli approval pending). That puts the stock above the price filter and largely ties it to the deal.</div>\n<div class=\"card\"><span class=\"tk\">PRE</span> Prenetics — Q3 revenue $64.1M, <span class=\"up\">+~228%</span> (IM8 brand +266%), adjusted free cash flow +$4.1M. The adjusted EBITDA loss was $12.7M and the net loss $25.4M. Market cap is about $277M per TipRanks, below the $300M floor.</div>\n<h2>Reported but failed</h2>\n<div class=\"tablewrap\"><table><tr><th>Ticker</th><th>Why it failed</th></tr>\n<tr><td>AUNA</td><td>EPS $0.41 vs $0.85 estimate (Digrin, single source).</td></tr>\n<tr><td>IIIV</td><td>Revenue +1% YoY; GAAP loss from continuing operations.</td></tr>\n<tr><td>GLAD / GBDC</td><td>BDCs with in-line EPS and a revenue miss; no growth story.</td></tr>\n<tr><td>IRIX / AIRE</td><td>Losses widened and revenue missed; micro-caps.</td></tr>\n<tr><td>DLB</td><td>Q4 revenue +22% with an EPS beat, but FY27 revenue guided flat at ~$1.42B; about -5.6% pre-market. Price is also above the filter.</td></tr>\n</table></div>\n<h2>Larger movers &amp; macro</h2>\n<p>NVDA up about 3% pre-market: revenue $115.8B (+103%) vs ~$109B expected, Q4 guide $130B ±3%. TJX <span class=\"up\">+5.3%</span> on a revenue beat. LOW <span class=\"down\">-4.3%</span>: the beat was helped by tariff refunds and the margin guide was cut. TGT <span class=\"down\">-1%</span> despite beating and raising, with $0.50 of EPS from tariff refunds. AAOI <span class=\"down\">-10%</span> on a $550M at-the-market stock offering. Tuesday: S&amp;P 500 -1.0% to a five-month low, Dow -850 points, VIX 25.5. The Fed's Waller floated a 50bp hike and markets price a December hike. FOMC minutes are out at 2pm, and the Anthropic IPO prices tonight.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Pony AI Q3 2026 results (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001969302/000110465926129308/tm2629888d1_ex99-1.htm"
+    },
+    {
+     "title": "ZIM Q3 2026 results (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001654126/000117891326005268/exhibit_99-1.htm"
+    },
+    {
+     "title": "Jumia Q3 2026 results — TipRanks",
+     "url": "https://www.tipranks.com/news/company-announcements/jumia-reports-third-quarter-2026-results-completes-50-million-capital-raise"
+    },
+    {
+     "title": "Prenetics Q3 2026 — TipRanks",
+     "url": "https://www.tipranks.com/news/company-announcements/prenetics-reports-q3-2026-revenue-growth-led-by-im8"
+    },
+    {
+     "title": "US premarket movers — Newsquawk",
+     "url": "https://www.newsquawk.com/headlines/us-premarket-movers-nvda-tjx-low-fcx-ttwo-tgt-fix-aaoi-dlb"
+    },
+    {
+     "title": "After-hours tech earnings Nov 17 (NVDA, DLB, IIIV)",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-tuesday-b92"
+    },
+    {
+     "title": "Earnings calendar Nov 17, 2026 — Digrin",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-17"
+    },
+    {
+     "title": "Implied earnings moves Nov 18 — TipRanks",
+     "url": "https://www.tipranks.com/news/options-volatility-and-implied-earnings-moves-today-november-18-2026"
+    },
+    {
+     "title": "Closing Look Nov 17 — CappNotes",
+     "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-17"
+    },
+    {
+     "title": "The Morning Brief Nov 18 — Specter Works",
+     "url": "https://specterworks.substack.com/p/the-morning-brief-2026-11-18"
+    }
+   ]
+  },
+  {
    "date": "2026-11-17",
    "headline": "No qualifiers: Agora (API) is the closest, with 19% growth and profits, but its guide slows",
    "summary": "Monday's after-close and Tuesday's pre-open reports produced no cheap stock with 20%+ growth, profits and a clean beat. Agora came closest: revenue up 19%, eighth straight profitable quarter, $363M in cash, but a slowing Q4 guide and lower margins. Red Cat fell sharply on a large revenue miss; futures were lower ahead of Nvidia.",
