@@ -1,6 +1,62 @@
 {
  "reports": [
   {
+   "date": "2026-11-19",
+   "headline": "One qualifier: ATRenew (RERE) grew revenue 25% with profit up 54% and guided Q4 +24–26%",
+   "summary": "ATRenew is the only cheap reporter that cleared the filters: revenue +25.3%, net income +53.6%, adjusted EPS beat and a strong Q4 guide, on a stock that sat near the bottom of its 52-week range. Jumia and NextBoat grew fast but lost money. Palo Alto leads large caps higher as Nasdaq futures jump ahead of Anthropic's IPO.",
+   "html": "<h2>Finalists</h2>\n<div class=\"card\"><span class=\"tk\">RERE</span> ATRenew — reported Q3 before the open on Nov 19. Total net revenue RMB6.45B (US$962.5M), <span class=\"up\">+25.3%</span> YoY; product revenue +27.0%, service revenue +6.1%. GAAP operating income +57.9% to RMB190.7M; net income +53.6% to RMB139.5M. Adjusted operating margin rose to about 3.3% from 2.7%. Adjusted EPS RMB0.99 per ordinary share vs RMB0.84 consensus (per TheFly). Q4 revenue guide RMB7.78B–7.88B, +24.4% to +26.0% YoY. About US$290M in cash, short-term investments and payment receivables vs RMB454M (~US$68M) short-term borrowings; Q3 buyback ~US$6.6M, with a plan to return at least 60% of adjusted net income. Shares traded around $3.90 in October (52-week range $3.50–$6.47, ~US$860M market cap), so it went into the print near the low end of its range.<br><b>Red flags:</b> very thin margins (low-single-digit operating margin) in a trade-in/resale business; sources disagree on the beat (Chartmill headlined revenue in line and an EPS miss, likely an ADS-vs-share basis mismatch); short-term borrowings up from RMB323M; China ADR risk; RERE options are thin, so check open interest and spreads. Pre-market: reported higher (Chartmill), price not verified.</div>\n<h2>Failed or near misses</h2>\n<div class=\"card\"><span class=\"tk\">JMIA</span> Jumia — revenue <span class=\"up\">+33%</span>, but still loss-making (adj. EBITDA -$7.9M) and Q4/FY guidance lowered after weak Black Friday GMV.</div>\n<div class=\"card\"><span class=\"tk\">NXB</span> NextBoat — revenue +111%, but acquisition-driven (Apex Marine, Bellhart), swung to a net loss of $4.6M and negative adj. EBITDA.</div>\n<div class=\"card\"><span class=\"tk\">AFYA</span> Afya — revenue only +6.1% with reaffirmed (not raised) guidance; pending Yduqs merger.</div>\n<div class=\"card\"><span class=\"tk\">BLSH</span> Bullish — adjusted revenue ~+10%, adj. EBITDA +24%; growth below the bar and headline net income inflated by non-operating gains.</div>\n<div class=\"card\"><span class=\"tk\">ASPI</span> ASP Isotopes — Q3 revenue ~$5.1M, still loss-making; enriched-isotope sales pending.</div>\n<h2>Larger movers and macro</h2>\n<p>Palo Alto (PANW) about <span class=\"up\">+10%</span> pre-market: revenue +39%, adj. EPS $1.05 vs $0.88 est, FY guide raised, $4.5B all-stock deal for Applied Compute. Everpure (P) about <span class=\"up\">+3–4%</span>: revenue +51%, third straight guidance raise, though non-GAAP gross margin fell to 69.2%. Kulicke &amp; Soffa (KLIC) revenue +131% with a beat. Walmart beat slightly and raised its sales outlook; NetEase about <span class=\"down\">-5%</span> on weak results. Nasdaq futures about +2% ahead of Anthropic's record IPO (priced $83, trades as ANT around 10am). Hawkish Fed minutes have markets pricing a December hike at ~90%+; 10-year near 5.07%.</p>\n<p class=\"note\">Coverage was thinner than usual: several pre-market mover pages (Benzinga, CNBC, Chartmill) failed to load, so some cheap reporters may be missing.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "ATRenew Q3 2026 press release (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001838957/000119312526467692/rere-ex99_1.htm"
+    },
+    {
+     "title": "TheFly via TipRanks: ATRenew adj. EPS RMB0.99 vs RMB0.84",
+     "url": "https://www.tipranks.com/news/the-fly/atrenew-reports-q3-adjusted-eps-rmb-0-99-consensus-rmb-0-84-thefly-news"
+    },
+    {
+     "title": "Chartmill: ATRenew shares climb pre-market",
+     "url": "https://www.chartmill.com/news/RERE/Chartmill-58930-AtRenew-NYSERERE-Q3-Revenue-In-Line-but-EPS-Misses-Estimates-as-Shares-Climb-Pre-Market"
+    },
+    {
+     "title": "StockAnalysis: RERE overview",
+     "url": "https://stockanalysis.com/stocks/rere/"
+    },
+    {
+     "title": "Jumia Q3 2026 results",
+     "url": "https://www.tradingview.com/news/acceswire:cca7bcbc9094b:0-jumia-reports-third-quarter-2026-results/"
+    },
+    {
+     "title": "NextBoat Q3 2026 (SEC 8-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0002067767/000149315226052352/ex99-1.htm"
+    },
+    {
+     "title": "Bullish Q3 2026 results",
+     "url": "https://www.bullish.com/us/news-insights/bullish-reports-third-quarter-2026-results"
+    },
+    {
+     "title": "Panabee: Afya Q3 2026",
+     "url": "https://www.panabee.com/news/afya-earnings-q3-2026"
+    },
+    {
+     "title": "After-Hours Technology Earnings, Nov 18 2026",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-wednesday-c4d"
+    },
+    {
+     "title": "Closing Look, Nov 18 2026",
+     "url": "https://cappnotes.substack.com/p/closing-look-wednesday-november-18"
+    },
+    {
+     "title": "Options Oracle: Anthropic prices at $83",
+     "url": "https://optionsoracle.substack.com/p/anthropic-prices-at-83-nasdaq-futures"
+    },
+    {
+     "title": "Current Logic morning brief, Nov 19 2026",
+     "url": "https://currentlogic.substack.com/p/the-morning-brief-november-19-2026"
+    }
+   ]
+  },
+  {
    "date": "2026-11-18",
    "headline": "No qualifiers: fast growers PONY and JMIA still unprofitable; ZIM's blowout is pinned by a $35 Hapag-Lloyd deal",
    "summary": "No cheap reporter cleared every filter this morning. Pony AI (+75% revenue) and Jumia (+33%) grew fast but are still losing money, Prenetics is under $300M market cap, and ZIM's strong quarter and raised guidance are capped by its pending $35/share cash takeover. Nvidia's beat is lifting tech futures as the Fed leans hawkish.",

@@ -51,6 +51,16 @@
    "premarket_ref": null,
    "report": "/#/2026-11-13",
    "note": "Revenue +32%, GAAP profit, beat own guide and raised FY outlook"
+  },
+  {
+   "id": "2026-11-19-RERE",
+   "date": "2026-11-19",
+   "symbol": "RERE",
+   "name": "ATRenew",
+   "direction": "long",
+   "premarket_ref": null,
+   "report": "/#/2026-11-19",
+   "note": "Revenue +25%, net income +54%, adj. EPS beat, Q4 guide +24-26%"
   }
  ]
 }
