@@ -1,6 +1,54 @@
 {
  "reports": [
   {
+   "date": "2026-11-20",
+   "headline": "One qualifier: Webull (BULL) grew revenue 39% with adjusted net income up ~87%, at $4.57 after a ~45% slide",
+   "summary": "Webull is the only cheap reporter that cleared the filters: revenue +39%, adjusted net income ~+87%, an adjusted EPS beat, and $757M in cash, on a stock down about 45% over the past year. Gorilla, RLX and WeRide posted big revenue growth but failed on losses or acquisition-driven growth. Intuit fell ~10% after hours as the S&P 500 extended its losing streak on the day of Anthropic's IPO.",
+   "html": "<h2>Finalists</h2>\n<div class=\"card\"><span class=\"tk\">BULL</span> Webull — reported Q3 after the close on Nov 19. Total revenue $218.7M, <span class=\"up\">+39%</span> YoY (+10% QoQ); trading-related revenue $164.7M, +53%. Adjusted net income $57.7M vs $30.8M a year ago (~+87%); adjusted operating profit ~$70M (~32% of revenue). Adjusted operating profit per share $0.13 vs ~$0.07 consensus (Investing.com). Customer assets $32.4B (+53%, helped by the Pi Securities deal), options contracts +79%, DARTs +66%, margin balances above $1B. Cash $757M vs roughly $115M in notes, credit line and repo borrowings. Shares closed at $4.57 on Nov 19, down ~45% over 12 months and ~48% over 3 months, so it went in heavily beaten down.<br><b>Red flags:</b> GAAP net income fell to $31.2M from $36.9M (includes a $9.2M non-cash remeasurement loss on Pi Securities contingent consideration); no guidance given; revenue beat is disputed (Investing.com: beat vs $216.9M; Quiver: miss vs $222.7M); part of the asset growth is acquired; results ride on retail trading and crypto activity, which is risky with VIX near 28 and Bitcoin falling. Pre-market: Quiver showed about +1.1% after the close; Friday pre-market price not verified.</div>\n<h2>Failed or near misses</h2>\n<div class=\"card\"><span class=\"tk\">GRRR</span> Gorilla Technology — revenue <span class=\"up\">+163%</span> to $69.5M (preliminary, unaudited), but net loss $16.6M, adj. EBITDA -$6.2M, 12.8% gross margin, cash down to $56.5M against ~$143M borrowings and ~$218M quarterly capex.</div>\n<div class=\"card\"><span class=\"tk\">RLX</span> RLX Technology — revenue +69.7%, but mostly from a European acquisition consolidated in July; gross margin fell to 23.3% from 31.2% and GAAP net income dropped ~29%; no guidance.</div>\n<div class=\"card\"><span class=\"tk\">WRD</span> WeRide — revenue +88% and gross margin up to 43%, but net loss RMB310M was flat and the adjusted loss widened ~22%; cash fell sharply this year.</div>\n<h2>Larger movers and macro</h2>\n<p>After hours Thursday: Intuit <span class=\"down\">~-10%</span> on a soft Q2 revenue guide and agreed Mailchimp sale; Ross <span class=\"down\">~-6%</span>; Elastic <span class=\"down\">~-6%</span> despite a beat; Gap <span class=\"up\">~+3%</span>; Keysight <span class=\"up\">~+1%</span> (revenue +41%). BJ's, Buckle and Frontline report before the open.</p>\n<p>Thursday the S&amp;P 500 fell ~2% (sixth straight loss) and the Nasdaq ~2.2% as Anthropic (ANT) debuted at $97.17, 17% above its $83 IPO price after opening at $111.50. VIX ended near 28.4, the 10-year yield sat around 5.04%, and markets price a ~90%+ chance of a 25 bp Fed hike on Dec 9. The Philly Fed index dropped to 6.3. Today: Fed's Waller (8:25am) and the final UMich sentiment (10am).</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Webull Q3 2026 results (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001866364/000121390026122261/ea031291401ex99-1.htm"
+    },
+    {
+     "title": "Investing.com: Webull earnings beat by $0.06",
+     "url": "https://www.investing.com/news/earnings/webull-earnings-beat-by-006-revenue-topped-estimates-5040125"
+    },
+    {
+     "title": "Quiver Quant: Webull Q3 2026",
+     "url": "https://www.quiverquant.com/news/WEBULL+($BULL)+Releases+Q3+2026+Earnings,+Stock+Rises"
+    },
+    {
+     "title": "Gorilla Technology Q3 2026 (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001903145/000143774926037713/ex_1009886.htm"
+    },
+    {
+     "title": "RLX Technology Q3 2026 (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001828365/000110465926130340/tm2630355d1_ex99-1.htm"
+    },
+    {
+     "title": "WeRide Q3 2026 (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001867729/000110465926130438/tm2630019d1_ex99-1.htm"
+    },
+    {
+     "title": "After-Hours Technology Earnings, Nov 19 2026",
+     "url": "https://analysisofficial.substack.com/p/after-hours-technology-earnings-thursday-828"
+    },
+    {
+     "title": "StockTitan: Stock Market Today, Nov 19 2026",
+     "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+    },
+    {
+     "title": "Closing Look, Nov 19 2026",
+     "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-19"
+    },
+    {
+     "title": "Digrin earnings calendar Nov 19 2026",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-19"
+    }
+   ]
+  },
+  {
    "date": "2026-11-19",
    "headline": "One qualifier: ATRenew (RERE) grew revenue 25% with profit up 54% and guided Q4 +24–26%",
    "summary": "ATRenew is the only cheap reporter that cleared the filters: revenue +25.3%, net income +53.6%, adjusted EPS beat and a strong Q4 guide, on a stock that sat near the bottom of its 52-week range. Jumia and NextBoat grew fast but lost money. Palo Alto leads large caps higher as Nasdaq futures jump ahead of Anthropic's IPO.",

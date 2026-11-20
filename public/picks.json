@@ -61,6 +61,16 @@
    "premarket_ref": null,
    "report": "/#/2026-11-19",
    "note": "Revenue +25%, net income +54%, adj. EPS beat, Q4 guide +24-26%"
+  },
+  {
+   "id": "2026-11-20-BULL",
+   "date": "2026-11-20",
+   "symbol": "BULL",
+   "name": "Webull",
+   "direction": "long",
+   "premarket_ref": null,
+   "report": "/#/2026-11-20",
+   "note": "Revenue +39%, adj. net income ~+87%, EPS beat; stock down ~45% in a year"
   }
  ]
 }
