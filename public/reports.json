@@ -1,6 +1,42 @@
 {
  "reports": [
   {
+   "date": "2026-11-23",
+   "headline": "No qualifiers: thin Thanksgiving-week slate; VNET (+8.7% pre) misses the 20% growth bar",
+   "summary": "Very few companies reported Friday after the close or this morning. VNET Group beat on adjusted EBITDA and added a $50M buyback, but revenue grew 14.8%, guidance was only maintained and it remains loss-making with heavy debt. Markets are bouncing hard after a seven-day S&P 500 losing streak, led by chips, while CrowdStrike falls on its Zscaler deal.",
+   "html": "<h2>Finalists</h2>\n<p>None today. The Friday after-close / Monday pre-open window was very thin (Thanksgiving week), and the one liquid cheap reporter, VNET, did not clear the growth bar.</p>\n<h2>Closest miss</h2>\n<div class=\"card\"><p><span class=\"tk\">VNET</span> VNET Group (China data centers) — ~$3 before the report (near post-earnings lows; ~57% down since last quarter); <span class=\"up\">+8.7% pre-market</span> per Investing.com.</p>\n<div class=\"tablewrap\"><table>\n<tr><th>Metric</th><th>Q3 2026</th></tr>\n<tr><td>Net revenue</td><td>RMB2.96B (US$442M), +14.8% YoY</td></tr>\n<tr><td>Wholesale IDC revenue</td><td>RMB1.22B, +27.6% YoY; retail +5.1%</td></tr>\n<tr><td>Adj. EBITDA</td><td>RMB923.1M, +21.7% YoY (31.1% margin); above ~RMB890.9M consensus</td></tr>\n<tr><td>GAAP gross margin</td><td>15.8% vs 20.9% a year ago</td></tr>\n<tr><td>Net loss attrib.</td><td>RMB83.1M (vs RMB307.0M loss), helped by a RMB58.8M fair-value gain</td></tr>\n<tr><td>FY2026 guidance</td><td>Unchanged: revenue RMB11.5–11.8B (+15.6–18.6%), adj. EBITDA RMB3.55–3.75B</td></tr>\n<tr><td>Other</td><td>New US$50M ADS buyback; wholesale capacity 1,127MW (+44%), utilization 70.7% (down from 73.9%)</td></tr>\n</table></div>\n<p>Why it fails: total revenue growth below 20%, guidance only maintained, still loss-making, GAAP gross margin compressing. Red flags: ~RMB24.8B (~US$3.7B) of borrowings and convertibles vs RMB6.49B cash, interest expense up to RMB227.6M from RMB151.0M, operating cash flow down ~17% YoY against ~RMB2B quarterly capex, ramp-up utilization falling.</p></div>\n<h2>Other reporters (failed screen)</h2>\n<ul>\n<li><span class=\"tk\">BLRX</span> BioLineRx — reported this morning; micro-cap clinical-stage biotech, fails size/fundamentals screen (numbers not reviewed).</li>\n<li><span class=\"tk\">MNTS</span> Momentus (Fri AMC) — ~$43M cap; revenue $4.8M beat but EPS -$0.40 missed. Penny/micro-cap.</li>\n<li><span class=\"tk\">AMSS</span> Amass Brands (Fri AMC) — ~$2.5M cap; EPS miss. Untradeable size.</li>\n<li><span class=\"tk\">GDRX</span> GoodRx — one calendar listed it for today's open, but no Q3 2026 release was found; not verified, not screened.</li>\n</ul>\n<h2>Bigger movers &amp; macro</h2>\n<p><span class=\"tk\">CRWD</span> <span class=\"down\">~-8 to -10%</span> after agreeing to buy <span class=\"tk\">ZS</span> (<span class=\"up\">+13%</span>) in a ~$43.9B all-stock deal (1.135 CRWD per ZS, ~34% premium). Chips and AI infrastructure rebound after last week's rout: <span class=\"tk\">NVDA</span> <span class=\"up\">~+8%</span>, <span class=\"tk\">AMD</span>, <span class=\"tk\">MU</span>, <span class=\"tk\">LRCX</span>, <span class=\"tk\">CRWV</span>, <span class=\"tk\">NBIS</span>, <span class=\"tk\">IREN</span> up 5–11%. <span class=\"tk\">CAPR</span> <span class=\"down\">-69%</span> on a second FDA rejection.</p>\n<p>Macro: S&amp;P 500 closed Friday at 6,910 after seven straight down days (-8.6% on the week, in correction; VIX ~36). Futures up ~2.2% (Nasdaq ~+2.9%) this morning; VIX ~31. 10-year near 4.91%. Short week: PCE, GDP revision and Beige Book Wednesday; markets shut Thursday. Tonight: ZM, HPE, A, J, SMTC, FLNC report.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "VNET Q3 2026 results (SEC 6-K Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001508475/000110465926130769/tm2630453d1_ex99-1.htm"
+    },
+    {
+     "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls (Yahoo/Investing.com)",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html"
+    },
+    {
+     "title": "Seven Red Days, Then a Green Monday (Options Oracle)",
+     "url": "https://optionsoracle.substack.com/p/seven-red-days-then-a-green-monday"
+    },
+    {
+     "title": "VNET preview: stock near its lows (Earnings Whispers via Finviz)",
+     "url": "https://finviz.com/news/422859/vnets-gigawatt-bookings-face-a-move-in-test-as-the-stock-sits-near-its-lows"
+    },
+    {
+     "title": "Earnings calendar Nov 20 (Digrin)",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-20"
+    },
+    {
+     "title": "Earnings calendar Nov 23 (Digrin)",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-23"
+    },
+    {
+     "title": "BioLineRx to report Q3 2026 on Nov 23",
+     "url": "https://www.prnewswire.com/il/news-releases/biolinerx-to-report-third-quarter-2026-results-on-november-23-2026-302943733.html"
+    }
+   ]
+  },
+  {
    "date": "2026-11-20",
    "headline": "One qualifier: Webull (BULL) grew revenue 39% with adjusted net income up ~87%, at $4.57 after a ~45% slide",
    "summary": "Webull is the only cheap reporter that cleared the filters: revenue +39%, adjusted net income ~+87%, an adjusted EPS beat, and $757M in cash, on a stock down about 45% over the past year. Gorilla, RLX and WeRide posted big revenue growth but failed on losses or acquisition-driven growth. Intuit fell ~10% after hours as the S&P 500 extended its losing streak on the day of Anthropic's IPO.",
