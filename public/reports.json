@@ -1,6 +1,58 @@
 {
  "reports": [
   {
+   "date": "2026-11-24",
+   "headline": "No qualifiers: cheap reporters (BILI, VIPS, KSS, AMTM, FLNC) lacked growth; chips pull back after Monday's rally",
+   "summary": "No stock under ~$20 that reported Monday after the close or Tuesday before the open passed the screen. Bilibili beat but grew revenue only 8%, while Vipshop, Kohl's and Amentum posted flat-to-down sales. Futures are lower as Nvidia and chips give back part of Monday's record-setting rally.",
+   "html": "<h2>Finalists</h2>\n<p>No qualifiers today. None of the cheap names that reported Monday after the close or Tuesday before the open combined 20%+ revenue growth with a clean beat and strong guidance.</p>\n<h2>Cheap names that reported but failed</h2>\n<div class=\"card\"><span class=\"tk\">BILI</span> Bilibili. Q3 beat (adj. EPS and revenue slightly above consensus per Investing.com); revenue +8% YoY (ads +20%, games −7%), op. profit +32%, FY26 non-GAAP op. profit guided ~CNY 2.8B. Growth well under 20%. Investing.com cites ~$10.28 pre-market, <span class=\"down\">−5.6%</span>, near its 52-week low (price not independently verified).</div>\n<div class=\"card\"><span class=\"tk\">VIPS</span> Vipshop. Q3 revenue RMB20.4B, <span class=\"down\">−4% YoY</span>; non-GAAP EPS/ADS $0.39 vs $0.42 a year ago; Q4 guided −5% to −10%; Q3 operating cash flow negative. Adds a $0.73/ADS special dividend and buybacks, but no growth.</div>\n<div class=\"card\"><span class=\"tk\">KSS</span> Kohl's. Q3 net sales +1.3%, comps +1.2%; adj. EPS $1.76 vs $0.10, but GAAP EPS includes a $137M tax benefit, a real-estate gain and ~$45M tariff refunds. FY26 guidance raised (EPS $4.30–4.50, mostly one-offs). Not a growth story; heavy lease obligations.</div>\n<div class=\"card\"><span class=\"tk\">AMTM</span> Amentum. FQ4 revenue $3.62B, <span class=\"down\">−8% YoY</span> (extra week in prior year); adj. EPS $0.71 (+13%), FCF $370M, net leverage 2.7x, first $500M buyback. FY27 guide roughly flat revenue. No growth.</div>\n<div class=\"card\"><span class=\"tk\">FLNC</span> Fluence Energy. FQ4 EPS −$0.75 vs −$0.27 est., revenue miss, revenue reported down ~29% YoY; stock jumped after hours on record orders/outlook per Benzinga. Fails on results.</div>\n<div class=\"card\"><span class=\"tk\">VREX / CMP / LOCL / PNNT / PFLT</span> Varex (EPS $0.06 vs $0.29, revenue miss), Compass Minerals (EPS miss), Local Bounti, PennantPark and PennantPark Floating Rate (EPS and revenue misses), per Everhint. Not verified against releases.</div>\n<p class=\"note\">CMB.TECH (CMBT) moved its Q3 report to Nov 26. Symbotic (SYM) beat but guided Q1 revenue below at the midpoint, and trades well above $20.</p>\n<h2>Larger movers and macro</h2>\n<p>Pre-market pullback after Monday's huge rally (S&amp;P +4.7%, Nasdaq +6.5% after Nvidia reinstated Jensen Huang): QQQ about −1.4%, NVDA about −4.4% on governance and trade-blacklist headlines. HPE (EPS $1.43 vs $1.27, raised guide, $5B buyback) and Semtech (beat, guide above) both down ~12% after big Monday gains. Analog Devices (adj. EPS $4.06 vs $3.88) down ~10% to ~$342 on guidance. Agilent +~7% (beat, strong FY27), Dollar Tree +~8%, Burlington +~6%, Best Buy up on comps +6.1%. Fed funds futures price ~98% odds of a 25 bp hike on Dec 9; 10-year at 4.92%. Light holiday week: GDP/PCE Wednesday, market closed Thursday.</p>\n<p class=\"note\">Several recap pages (Chartmill, Investrade, Quartz) failed to load, so the cheap-stock sweep may be incomplete; pre-market prices were mostly unavailable.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Bilibili Q3 2026 earnings call transcript (Investing.com)",
+     "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-bilibili-tops-q3-2026-estimates-as-shares-fall-premarket-93CH-5048349"
+    },
+    {
+     "title": "Vipshop Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001529192/000110465926131313/tm2630463d1_ex99-1.htm"
+    },
+    {
+     "title": "Kohl's Q3 2026 results (SEC 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000885639/000119312526473133/d168523dex991.htm"
+    },
+    {
+     "title": "Amentum Q4 FY2026 results (SEC 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0002011286/000162828026075523/exhibit991-november232026.htm"
+    },
+    {
+     "title": "Fluence Energy stock jumps after hours (Benzinga)",
+     "url": "https://www.benzinga.com/markets/equities/26/11/63568171/fluence-energy-flnc-stock-jumps-over-17-after-hours-whats-going-on"
+    },
+    {
+     "title": "Earnings Hints & Reports, Nov 23 evening (Everhint)",
+     "url": "https://www.everhint.com/earnings-hints-reports-november-23-2026-evening-update-last-3-hours-pacific-time/"
+    },
+    {
+     "title": "Closing Look, Nov 23 2026 (Cappnotes)",
+     "url": "https://cappnotes.substack.com/p/closing-look-monday-november-23-2026"
+    },
+    {
+     "title": "Earnings calendar, week of Nov 23 (StockTitan)",
+     "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
+    },
+    {
+     "title": "Stocks reporting earnings today (TipRanks)",
+     "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-24-2026"
+    },
+    {
+     "title": "Morning Brief Nov 24 2026 (Current Logic)",
+     "url": "https://currentlogic.substack.com/p/the-morning-brief-november-24-2026"
+    },
+    {
+     "title": "CMB.TECH Q3 results date change",
+     "url": "https://finviz.com/news/421366/cmbtech-announces-q3-2026-results-on-26112026"
+    }
+   ]
+  },
+  {
    "date": "2026-11-23",
    "headline": "No qualifiers: thin Thanksgiving-week slate; VNET (+8.7% pre) misses the 20% growth bar",
    "summary": "Very few companies reported Friday after the close or this morning. VNET Group beat on adjusted EBITDA and added a $50M buyback, but revenue grew 14.8%, guidance was only maintained and it remains loss-making with heavy debt. Markets are bouncing hard after a seven-day S&P 500 losing streak, led by chips, while CrowdStrike falls on its Zscaler deal.",
