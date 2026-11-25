@@ -1,6 +1,50 @@
 {
  "reports": [
   {
+   "date": "2026-11-25",
+   "headline": "No qualifiers: GOTU closest (+18% revenue, back to profit) but guided Q4 to ~5%; futures slide ~2% before Thanksgiving",
+   "summary": "No stock under ~$20 that reported Tuesday after the close or Wednesday before the open passed the screen. Gaotu grew revenue 18% and turned profitable but guided Q4 growth to ~5%; Kanzhun, Qfin, Li Auto and CleanSpark were too slow or shrinking. Futures are down roughly 2–3% on chip weakness and tariff headlines ahead of a heavy data morning.",
+   "html": "<h2>Finalists</h2>\n<p>No qualifiers today. None of the cheap names that reported Tuesday after the close or Wednesday before the open combined 20%+ revenue growth with a clean beat and strong guidance. Every candidate guided next-quarter growth sharply lower.</p>\n<h2>Cheap names that reported but failed</h2>\n<div class=\"card\"><span class=\"tk\">GOTU</span> Gaotu Techedu. Q3 net revenue RMB1.87B, +18.3% YoY; swung to GAAP net income of RMB15.6M from a RMB147.1M loss. The closest call today, but it fails: Q4 revenue guide RMB1,758–1,778M implies only ~4–6% growth, gross billings grew just 5.8%, and the release summary shows a Q3 operating cash outflow (~RMB795M) and cash/investments down ~21% since December while short-term borrowings rose. Release figures partly from a summary; no pre-market quote found.</div>\n<div class=\"card\"><span class=\"tk\">BZ</span> Kanzhun (BOSS Zhipin). Q3 revenue RMB2.42B, +11.7%; adj. net income +12.3%; adj. EPS/ADS RMB2.34 vs ~RMB1.93 est. GAAP net loss of RMB249M from a RMB1.44B investee mark-down. Q4 guide +5.3% to +7.3%. New $500M buyback, ~RMB19.6B net cash. Growth too slow.</div>\n<div class=\"card\"><span class=\"tk\">QFIN</span> Qfin Holdings. Q3 revenue RMB3.09B, <span class=\"down\">about −41% YoY</span>; GAAP net income −73%; loan book −32.5%; management cites \"clear erosion in risk performance.\" Q4 net income guided down 67–77%. Fails.</div>\n<div class=\"card\"><span class=\"tk\">LI</span> Li Auto. Q3 revenue RMB28.8B, +5.4%; deliveries +7.2%; GAAP net loss narrowed to RMB310M; strong free cash flow (RMB1.96B). Q4 deliveries guided +0.7% to +5.3%. Not a growth story, and price likely above the screen.</div>\n<div class=\"card\"><span class=\"tk\">CLSK</span> CleanSpark. FQ4 revenue ~$120.9M, <span class=\"down\">down ~46% YoY</span>, missed estimates; FY26 revenue down ~25% with a large net loss. Bitcoin is ~$58.5K, down ~23% in November. Fails.</div>\n<div class=\"card\"><span class=\"tk\">AMBA</span> Ambarella. Q3 revenue $115.2M (+6%) and adj. EPS $0.28 both missed; Q4 revenue guide $70–75M vs ~$112M est. Fails (and trades well above $20).</div>\n<p class=\"note\">No 2026 results found for Varex (VREX), Nano-X (NNOX), StealthGas (GASS) or Diana Shipping (DSX) at screen time. FinVolution (FINV) is listed for after the close.</p>\n<h2>Larger movers and macro</h2>\n<p>Sharp risk-off pre-market: S&amp;P futures about −1.9%, Nasdaq futures about −2.9% (QQQ ~−2.9%, SPY ~−2.0%). Nvidia is down another ~4–5% after −5.9% Tuesday; Reuters reports new tariffs on 16 trading partners may be coming. Dell (EPS $9.45 vs ~$6.6 est., revenue +103%, raised FY27) is still down ~4.6%; Nutanix ~−14% (beat, but flat FY revenue guide and CEO departure); Autodesk ~−5% and Workday ~−5% despite beats and raises; HP ~+0.6% (beat, raised dividend); Deere ~−2% on an EPS miss. Bitcoin ~$58.5K. Data-heavy pre-holiday session: GDP (2nd est.), October PCE, jobless claims and personal income at 8:30, new home sales at 10:00, Beige Book at 2:00. 10-year ~4.90%. Markets closed Thursday for Thanksgiving; Friday is a half day.</p>\n<p class=\"note\">Two recap pages (Chartmill, Current Logic) failed to load and StockAnalysis's pre-market page was stale, so the cheap-stock sweep may be incomplete and pre-market prices for small names were mostly unavailable.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Digrin earnings calendar, Nov 24, 2026",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-24"
+    },
+    {
+     "title": "Digrin earnings calendar, Nov 25, 2026",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-25"
+    },
+    {
+     "title": "Unusual Whales pre-market brief, Nov 25, 2026",
+     "url": "https://unusualwhales.com/news/premarket-brief-stocks-futures-nutanix-workday-dell-2026-11-25"
+    },
+    {
+     "title": "Investrade Morning Preview, Nov 25, 2026",
+     "url": "https://investrade.com/morning-preview-november-25-2026/"
+    },
+    {
+     "title": "Gaotu Q3 2026 results (PR Newswire)",
+     "url": "https://www.prnewswire.com/news-releases/gaotu-techedu-announces-third-quarter-2026-unaudited-financial-results-302950230.html"
+    },
+    {
+     "title": "Kanzhun Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001842827/000110465926131805/tm2630442d1_ex99-1.htm"
+    },
+    {
+     "title": "Qfin Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001741530/000110465926131684/tm2630464d1_ex99-1.htm"
+    },
+    {
+     "title": "Li Auto Q3 2026 results (SEC 6-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001791706/000110465926131768/tm2630657d1_ex99-1.htm"
+    },
+    {
+     "title": "CleanSpark Q4 revenue miss (Stocktwits)",
+     "url": "https://stocktwits.com/news-articles/markets/equity/cleanspark-stock-dips-after-hours-on-q4-revenue-miss/cL53OM3REgV"
+    }
+   ]
+  },
+  {
    "date": "2026-11-24",
    "headline": "No qualifiers: cheap reporters (BILI, VIPS, KSS, AMTM, FLNC) lacked growth; chips pull back after Monday's rally",
    "summary": "No stock under ~$20 that reported Monday after the close or Tuesday before the open passed the screen. Bilibili beat but grew revenue only 8%, while Vipshop, Kohl's and Amentum posted flat-to-down sales. Futures are lower as Nvidia and chips give back part of Monday's record-setting rally.",
