@@ -1,6 +1,30 @@
 {
  "reports": [
   {
+   "date": "2026-11-26",
+   "headline": "Thanksgiving: US markets closed, no qualifiers; Dow erased a 1,100-point drop Wednesday",
+   "summary": "US markets are closed for Thanksgiving and no cheap stock with liquid options reported Wednesday after the close, so there are no finalists. Wednesday ended mixed after a sharp intraday sell-off: Dow +0.33%, S&P 500 -0.21%, Nasdaq -0.62%.",
+   "html": "<h2>Thanksgiving: US markets closed</h2>\n<p>US stock and options markets are closed Thursday, November 26, so there is no pre-market session today. The window since the last screen (Wednesday after the close) was nearly empty.</p>\n<h2>Finalists</h2>\n<p>None. No stock under ~$20 with liquid options reported Wednesday after the close.</p>\n<h2>What reported</h2>\n<div class=\"card\"><span class=\"tk\">BMA</span> Banco Macro: the only after-close name on the calendar (Digrin). Market cap about $4.4B; outside the cheap-stock price range, so not screened. Results were not posted on the calendar at check time.</div>\n<p>Wednesday's pre-market names (Kanzhun, Li Auto, Gaotu, StealthGas, Diana Shipping, Nano-X, Deere) were covered in yesterday's report; StealthGas, Diana Shipping and Nano-X missed on EPS and revenue.</p>\n<h2>Market</h2>\n<p>Wednesday's feared sell-off reversed: the Dow erased a loss of more than 1,100 points to close <span class=\"up\">+0.33%</span> at 50,183, the S&amp;P 500 closed <span class=\"down\">-0.21%</span> at 7,186 and the Nasdaq <span class=\"down\">-0.62%</span> at 23,586. Drivers: AI-stock weakness, renewed tariff uncertainty and a third straight 0.3% rise in core PCE. Big movers: HP <span class=\"up\">+11.5%</span> on its earnings and fiscal 2027 outlook, Charter <span class=\"up\">+8.4%</span>, Ambarella <span class=\"down\">-19.8%</span> on weak guidance, Nutanix <span class=\"down\">-15%</span>. Overseas shares rose Thursday, led by AI names.</p>\n<p class=\"note\">Option quotes before 9:30am ET are stale; implied volatility typically drops after earnings.</p>",
+   "sources": [
+    {
+     "title": "Digrin earnings calendar, Nov 25 2026",
+     "url": "https://www.digrin.com/stocks/earnings_calendar/2026-11-25"
+    },
+    {
+     "title": "Motley Fool: Stock Market Today, Nov. 25 2026",
+     "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-dow-erases-1-100-point-loss-as-wall-street-stages-dramatic-late-day-comeback/"
+    },
+    {
+     "title": "BNN Bloomberg: World shares push higher, US closed for Thanksgiving",
+     "url": "https://www.bnnbloomberg.ca/markets/2026/11/26/world-shares-push-higher-while-markets-in-us-will-be-closed-for-thanksgiving/"
+    },
+    {
+     "title": "EverHint: Earnings reports Nov 25 2026",
+     "url": "https://www.everhint.com/earnings-reports-november-25-2026-evening-update-last-24-hours-pacific-time/"
+    }
+   ]
+  },
+  {
    "date": "2026-11-25",
    "headline": "No qualifiers: GOTU closest (+18% revenue, back to profit) but guided Q4 to ~5%; futures slide ~2% before Thanksgiving",
    "summary": "No stock under ~$20 that reported Tuesday after the close or Wednesday before the open passed the screen. Gaotu grew revenue 18% and turned profitable but guided Q4 growth to ~5%; Kanzhun, Qfin, Li Auto and CleanSpark were too slow or shrinking. Futures are down roughly 2–3% on chip weakness and tariff headlines ahead of a heavy data morning.",
